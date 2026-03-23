@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patologías – Ozonoterapia Veterinaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--teal:#0a7f72;--teal-lt:#0ea894;--teal-dim:#064d44;--teal-deep:#032e29;--cream:#f5f0e8;--ink:#0f1f1c;--mist:#e0f0ed;--accent:#c8f25a;--white:#fff;--gray:#6b7e7a;}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(3,46,41,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(14,168,148,.15)}
+.nav-logo{font-family:'Cormorant Garamond',serif;color:var(--cream);font-size:1.2rem;font-weight:600;letter-spacing:.05em;text-decoration:none}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(245,240,232,.65);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;padding:.3rem 0;border-bottom:1px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);border-color:var(--accent)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--cream)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(3,46,41,.98);padding:2rem;z-index:199;flex-direction:column;gap:1.2rem}
+.mobile-menu a{color:var(--cream);text-decoration:none;font-size:1rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.mobile-menu.open{display:flex}
+.page-header{min-height:40vh;background:var(--teal-deep);display:flex;align-items:flex-end;padding:6rem 4rem 3rem;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(14,168,148,.15) 0%,transparent 60%)}
+.ph-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.ph-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.1;color:var(--cream)}
+.ph-title em{font-style:italic;color:var(--teal-lt)}
+section{padding:5rem 4rem}
+.s-dark{background:var(--teal-deep);color:var(--cream)}
+.s-mid{background:var(--teal-dim);color:var(--cream)}
+.s-light{background:var(--cream)}
+.s-mist{background:var(--mist)}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
+.s-dark .eyebrow,.s-mid .eyebrow{color:var(--accent)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;margin-bottom:1rem}
+.sec-title em{color:var(--teal-lt)}
+.s-light .sec-title em,.s-mist .sec-title em{color:var(--teal)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.split.rev{direction:rtl}
+.split.rev>*{direction:ltr}
+.ph{background:linear-gradient(135deg,rgba(14,168,148,.12),rgba(10,127,114,.06));border:1px solid rgba(14,168,148,.15);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s,border-color .2s;min-height:200px;overflow:hidden;position:relative}
+.ph:hover{border-color:var(--teal-lt);transform:scale(1.01)}
+.ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block}
+.s-light .ph,.s-mist .ph{border-color:rgba(10,127,114,.2)}
+.lightbox{position:fixed;inset:0;background:rgba(3,46,41,.96);z-index:999;display:none;align-items:center;justify-content:center;cursor:pointer}
+.lightbox.open{display:flex}
+.lb-close{position:absolute;top:1.5rem;right:2rem;color:var(--cream);font-size:2rem;cursor:pointer;line-height:1}
+#lb-img img{max-width:90vw;max-height:85vh;border-radius:4px;display:block;pointer-events:none}
+.collage-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.collage-3{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:.75rem}
+.collage-3 .ph:first-child{grid-row:span 2}
+.carousel-wrap{position:relative;overflow:hidden;border-radius:4px}
+.carousel-track{display:flex;transition:transform .4s ease}
+.carousel-track .ph{min-width:100%;min-height:300px;flex-shrink:0;border-radius:0}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(3,46,41,.7);border:none;color:var(--cream);font-size:1.4rem;padding:.5rem .9rem;cursor:pointer;z-index:2;border-radius:2px;transition:background .2s}
+.car-btn:hover{background:var(--teal)}
+.car-prev{left:.75rem}.car-next{right:.75rem}
+.car-dots{display:flex;justify-content:center;gap:.5rem;margin-top:.75rem}
+.car-dot{width:6px;height:6px;border-radius:50%;background:rgba(14,168,148,.3);cursor:pointer;transition:background .2s}
+.car-dot.active{background:var(--teal-lt)}
+.pat-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:.3rem}
+.pat-text{font-size:.88rem;line-height:1.75;margin-bottom:.5rem}
+.s-dark .pat-text,.s-mid .pat-text{color:rgba(245,240,232,.7)}
+.s-light .pat-text,.s-mist .pat-text{color:var(--gray)}
+.pat-tx-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-lt);margin-top:.9rem;margin-bottom:.3rem}
+.s-light .pat-tx-label,.s-mist .pat-tx-label{color:var(--teal)}
+.pat-tx{font-size:.86rem;line-height:1.7}
+.s-dark .pat-tx,.s-mid .pat-tx{color:rgba(245,240,232,.65)}
+.s-light .pat-tx,.s-mist .pat-tx{color:var(--gray)}
+.next-section{background:var(--teal-deep);border-top:1px solid rgba(14,168,148,.2);padding:4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.next-label{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.4);margin-bottom:.5rem}
+.next-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--cream)}
+.next-desc{font-size:.85rem;color:rgba(245,240,232,.5);margin-top:.4rem;max-width:340px}
+.next-btn{background:var(--accent);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 2.5rem;border-radius:3px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:transform .2s,box-shadow .2s}
+.next-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,242,90,.2)}
+@media(max-width:860px){
+  nav{padding:.9rem 1.2rem}.nav-links{display:none}.nav-burger{display:flex}
+  section{padding:3rem 1.4rem}.page-header{padding:5rem 1.4rem 2.5rem}
+  .split{grid-template-columns:1fr}.split.rev{direction:ltr}
+  .collage-2{grid-template-columns:1fr}.collage-3{grid-template-columns:1fr;grid-template-rows:auto}
+  .collage-3 .ph:first-child{grid-row:span 1}
+  .next-section{flex-direction:column;padding:3rem 1.4rem;text-align:center}.next-desc{margin:0 auto}
+  .ph{min-height:260px !important}
+}
+</style>
+</head>
+<body>
+<div class="lightbox" id="lb" onclick="closeLb()">
+  <span class="lb-close">×</span>
+  <div id="lb-img"></div>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo">Soma<span>vet</span> Formación</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ozono</a></li>
+    <li><a href="patologias.html" class="active">Patologías</a></li>
+    <li><a href="casos.html">Casos Clínicos</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="index.html" onclick="toggleMenu()">Ozono</a>
+  <a href="patologias.html" onclick="toggleMenu()">Patologías</a>
+  <a href="casos.html" onclick="toggleMenu()">Casos Clínicos</a>
+</div>
+
+<div class="page-header">
+  <div style="position:relative;z-index:2">
+    <div class="ph-eyebrow">Ozonoterapia Veterinaria</div>
+    <h1 class="ph-title">Patologías y<br><em>vías de administración</em></h1>
+  </div>
+</div>
+
+<!-- Slide 15: mapa conceptual -->
+<section class="s-dark">
+  <p class="eyebrow" style="text-align:center;color:#ffffff;margin-bottom:2rem">Dosis y concentraciones</p>
+
+<style>
+.dc-wrap{max-width:900px;margin:0 auto}
+.dc-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.dc-col-title{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#c8f25a;margin-bottom:1.8rem;text-align:center}
+.dc-circles{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:0}
+.dc-circle{display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.dc-ring{width:100px;height:100px;border-radius:50%;border:8px solid rgba(14,168,148,.15);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.dc-ring::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:8px solid transparent;border-top-color:#0ea894;border-right-color:#0ea894;border-bottom-color:#0ea894}
+.dc-ring-val{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:#e0f0ed;line-height:1.15;text-align:center}
+.dc-box{border:1px dashed rgba(14,168,148,.3);border-radius:4px;padding:.8rem .9rem;text-align:center;width:100%}
+.dc-box p{font-size:.85rem;color:rgba(245,240,232,.6);line-height:1.75;margin:0}
+.dc-vol-list{display:flex;flex-direction:column;gap:1.1rem}
+.dc-vol-row{display:flex;align-items:center;gap:1.2rem}
+.dc-vol-pill{border:1.5px solid rgba(14,168,148,.5);border-radius:20px;padding:.4rem 1.1rem;font-size:.88rem;color:rgba(245,240,232,.8);white-space:nowrap;min-width:115px;text-align:center;flex-shrink:0}
+.dc-vol-desc{font-size:.92rem;color:rgba(245,240,232,.85);line-height:1.5;font-weight:500}
+@media(max-width:720px){
+  .dc-cols{grid-template-columns:1fr;gap:2.5rem}
+  .dc-circles{grid-template-columns:repeat(4,1fr);gap:.5rem}
+  .dc-ring{width:58px;height:58px;border-width:6px}
+  .dc-ring::before{inset:-6px;border-width:6px}
+  .dc-ring-val{font-size:.82rem}
+  .dc-box p{font-size:.68rem}
+  .dc-vol-pill{min-width:88px;font-size:.75rem;padding:.3rem .7rem}
+  .dc-vol-desc{font-size:.78rem}
+}
+@media(max-width:420px){
+  .dc-circles{grid-template-columns:repeat(2,1fr);gap:.7rem}
+}
+</style>
+
+  <div class="dc-wrap">
+    <div class="dc-cols">
+      <div>
+        <div class="dc-col-title">Vías de administración</div>
+        <div class="dc-circles">
+          <div class="dc-circle">
+            <div class="dc-ring"><div class="dc-ring-val">20/50<br><span style="font-size:.8rem">ug</span></div></div>
+            <div class="dc-box"><p>Subcutánea<br>Intramuscular<br>Intrarectal<br>Intravaginal<br>Bagging</p></div>
+          </div>
+          <div class="dc-circle">
+            <div class="dc-ring"><div class="dc-ring-val">50<br><span style="font-size:.8rem">ug</span></div></div>
+            <div class="dc-box"><p>AH Menor</p></div>
+          </div>
+          <div class="dc-circle">
+            <div class="dc-ring"><div class="dc-ring-val">120<br><span style="font-size:.8rem">ug</span></div></div>
+            <div class="dc-box"><p>Sueros<br>Dextrosa 5%<br>Solución<br>Fisiológicas</p></div>
+          </div>
+          <div class="dc-circle">
+            <div class="dc-ring"><div class="dc-ring-val">120<br><span style="font-size:.8rem">ug</span></div></div>
+            <div class="dc-box"><p>Local<br>Agua,<br>aceites,<br>cremas</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="dc-col-title">Volumen administrado</div>
+        <div class="dc-vol-list">
+          <div class="dc-vol-row">
+            <div class="dc-vol-pill">Intrarectal</div>
+            <div class="dc-vol-desc">1 a 2cc x kilo de peso del paciente</div>
+          </div>
+          <div class="dc-vol-row">
+            <div class="dc-vol-pill">Intravaginal</div>
+            <div class="dc-vol-desc">continuo 2 a 5 minutos</div>
+          </div>
+          <div class="dc-vol-row">
+            <div class="dc-vol-pill">Bagging</div>
+            <div class="dc-vol-desc">continuo 2 a 10 minutos</div>
+          </div>
+          <div class="dc-vol-row">
+            <div class="dc-vol-pill">AH Menor</div>
+            <div class="dc-vol-desc">1,5 cc cada 10 kilos de peso</div>
+          </div>
+          <div class="dc-vol-row">
+            <div class="dc-vol-pill">Sueros</div>
+            <div class="dc-vol-desc">50cc cada 10 kilos de peso</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Slide 16: Ozonización suero -->
+<section class="s-mid">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Vías de administración</p>
+      <div class="pat-title">Ozonización de suero</div>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-seis.png" alt="Ozonización de suero">
+    </div>
+  </div>
+</section>
+
+<!-- Slides 17–18: 2 fotos -->
+<section class="s-dark" style="padding-top:2rem;padding-bottom:2rem">
+  <div class="collage-2">
+    <div class="ph" style="min-height:300px" onclick="openLb(this)">
+      <img src="img/imagen-siete.png" alt="Foto">
+    </div>
+    <div class="ph" style="min-height:300px" onclick="openLb(this)">
+      <img src="img/imagen-ocho.png" alt="Foto">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 19: Bagging -->
+<section class="s-mid">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Vías tópicas</p>
+      <div class="pat-title">Bagging</div>
+      <p class="pat-text">Embolsado con ozono — técnica de aplicación tópica regional.</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-nueve.png" alt="Bagging">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 20: Ozonización de aceite -->
+<section class="s-dark">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Preparación</p>
+      <div class="pat-title">Ozonización de aceite</div>
+    </div>
+    <div class="ph" style="min-height:550px" onclick="openLb(this)">
+      <img src="img/imagen-diez.png" alt="Ozonización de aceite">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 21: Subcutáneo -->
+<section class="s-mid">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Vía sistémica</p>
+      <div class="pat-title">Subcutáneo</div>
+    </div>
+    <div class="ph" style="min-height:320px" onclick="openLb(this)">
+      <img src="img/imagen-once.png" alt="Subcutáneo">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 22: Intrarectal -->
+<section class="s-dark">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Insuflación</p>
+      <div class="pat-title">Intrarectal</div>
+    </div>
+    <div class="ph" style="min-height:400px" onclick="openLb(this)">
+      <img src="img/imagen-doce.png" alt="Intrarectal">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 23: Local en copa -->
+<section class="s-mid">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Aplicación local</p>
+      <div class="pat-title">Local en copa</div>
+    </div>
+    <div class="ph" style="min-height:400px" onclick="openLb(this)">
+      <img src="img/imagen-trece.png" alt="Local en copa">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 24: Aceite O3 -->
+<section class="s-dark">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Tópica</p>
+      <div class="pat-title">Aceite O₃</div>
+    </div>
+    <div class="ph" style="min-height:280px" onclick="openLb(this)">
+      <img src="img/imagen-catorce.png" alt="Aceite O3">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 25: Aceite O3 y subcutáneo -->
+<section class="s-mid">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Tópica</p>
+      <div class="pat-title">Aceite O₃ y subcutáneo</div>
+    </div>
+    <div class="ph" style="min-height:400px" onclick="openLb(this)">
+      <img src="img/imagen-quince.png" alt="Local en copa">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 26: Tratamiento local — carrusel -->
+<section class="s-dark">
+  <div style="max-width:860px;margin:0 auto;text-align:center">
+    <p style="font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#c8f25a;margin-bottom:.5rem">Vías de administración</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:#f5f0e8;line-height:1.2;margin:0 0 1.4rem">Tratamiento <em style="font-style:italic;color:#0ea894">local</em></h2>
+    <div style="position:relative;border-radius:6px;overflow:hidden;cursor:pointer" onclick="openLb(this)">
+      <img src="img/imagen-16.png" alt="Tratamiento local" style="width:100%;min-height:480px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 27: Sistema digestivo -->
+<section class="s-light" id="digestivo">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Sistema digestivo</div>
+      <p class="pat-text">Estomatitis: infecciosas: virales-bacterianas-fungicas.</p>
+      <p class="pat-text">Esofagitis por reflujo.</p>
+      <p class="pat-text">Gastritis: Aguda – Crónica</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Agua O3 - Aceites O3 - Sueros O3 · Ahmenor · Frecuencia - dosis.</p>
+      <p class="pat-text" style="margin-top:.8rem">Enteritis: agudas- crónicas, autoinmunes, infecciosas, parasitarias</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Sueros O3 - insuflación rectal - agua ozonizada · Ahmenor. Frecuencia - dosis.</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-17.png" alt="Sistema digestivo">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 28: Autoinmunes -->
+<section class="s-mid" id="autoinmunes">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Autoinmunes</div>
+      <p class="pat-text">Lupus - Pénfigo - Digestivas - Hematológicas - Oculares</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Ozono endovenoso: suero glucosado<br>Ozono local: subcutáneo<br>Intrarectal<br>Autohemoterapia menor<br>frecuencia según el caso y combinación.</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-18.png" alt="Autoinmunes">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 29: Oncológicas -->
+<section class="s-light" id="oncologicas">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Oncológicas</div>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Ozono endovenoso: suero glucosado AHM<br><br>En caso de tratamiento protocolar quimioterápico reduce ampliamente efectos colaterales (x ej. inmunosupresión) mejora sustancialmente estado general.</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-19.png" alt="Oncológicas">
+    </div>
+  </div>
+</section>
+
+<!-- Slides 30–31: Hemoterapia menor -->
+<section class="s-dark">
+  <div style="max-width:860px;margin:0 auto;text-align:center">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:#f5f0e8;line-height:1.2;margin:0 0 1.4rem">Hemoterapia <em style="font-style:italic;color:#0ea894">Menor</em></h2>
+    <div style="position:relative;border-radius:6px;overflow:hidden;cursor:pointer" onclick="openLb(this)">
+      <img src="img/imagen-20.png" alt="Tratamiento local" style="width:100%;min-height:480px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 32: Bucales -->
+<section class="s-mist" id="bucales">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Bucales</div>
+      <p class="pat-text">Gingivitis infecciosa, úlceras</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Ozono local: aceites ozonizados<br>Agua ozonizada</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-21.png" alt="Bucales">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 33: Óticas -->
+<section class="s-mid" id="oticas">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Óticas</div>
+      <p class="pat-text">Infecciosas, inflamatorias</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Ozono local: ozono local con copa u otoscopio<br>gotas ozonizadas - frecuencia y tiempo de tratamiento según curso de la patología</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-22.png" alt="Óticas">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 34: Hematológicas -->
+<section class="s-light" id="hematologicas">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Hematológicas</div>
+      <p class="pat-text">Anemias - Autoinmunes - infecciosas</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Ozono endovenoso: suero glucosado según patología su frecuencia y tratamiento protocolar.<br>Autohemoterapia menor</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-23.png" alt="Hematológicas">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 35: fotos — collage 3 -->
+<section class="s-dark">
+  <div style="max-width:1200px;margin:0 auto;text-align:center">
+    <div style="position:relative;border-radius:6px;overflow:hidden;cursor:pointer" onclick="openLb(this)">
+      <img src="img/imagen-24.png" alt="Tratamiento local" style="width:100%;min-height:480px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 36: Neurológicas -->
+<section class="s-mist" id="neurologicas">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Neurológicas</div>
+      <p class="pat-text">Síndrome cerebeloso, ACV, hidrocefalia, desmielinización, arteroesclerosis senil</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Suero glucosado endovenoso · Intrarectal.<br>Rápida evolución síndrome cerebeloso déficit irrigativo.</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-25.png" alt="Neurológicas">
+    </div>
+  </div>
+</section>
+
+<!-- Slides 37–38–39: 3 fotos -->
+<section class="s-dark" style="padding-top:2rem;padding-bottom:2rem">
+  <div class="collage-3">
+    <div class="ph" style="min-height:400px" onclick="openLb(this)"><img src="img/imagen-26.png" alt="Foto"></div>
+    <div class="ph" style="min-height:200px" onclick="openLb(this)"><img src="img/imagen-27.png" alt="Foto"></div>
+    <div class="ph" style="min-height:200px" onclick="openLb(this)"><img src="img/imagen-28.png" alt="Foto"></div>
+  </div>
+</section>
+
+<!-- Slide 40: Infecciosas -->
+<section class="s-light" id="infecciosas">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Infecciosas</div>
+      <p class="pat-text">Bacterianas - Virales - Fúngicas</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Locales en lesiones - Subcutánea, insuflación en bolsa - autohemoterapia menor.<br><br>En casos graves como septicemias: tratamiento con ozono endovenoso (suero) con excelentes resultados (en horas) junto con el tratamiento protocolar de antibioticoterapia.</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-29.png" alt="Infecciosas">
+    </div>
+  </div>
+</section>
+
+<!-- Slide 41: Oculares -->
+<section class="s-mid" id="oculares">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="pat-title">Oculares</div>
+      <p class="pat-text" style="font-weight:500;color:rgba(245,240,232,.9)">Blefaritis infecciosas - inflamatorias</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Ozono subcutáneo</p>
+      <p class="pat-text" style="font-weight:500;color:rgba(245,240,232,.9);margin-top:1rem">Úlceras corneales</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">PRP ozonizado - instilación local</p>
+      <p class="pat-text" style="font-weight:500;color:rgba(245,240,232,.9);margin-top:1rem">Glaucoma ángulo abierto</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Ozono endovenoso: suero glucosado</p>
+      <p class="pat-text" style="font-weight:500;color:rgba(245,240,232,.9);margin-top:1rem">Conjuntivitis virales - infecciosas bacterianas</p>
+      <div class="pat-tx-label">Tratamiento</div>
+      <p class="pat-tx">Agua destilada ozonizada, instilación local</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-30.png" alt="Oculares">
+    </div>
+  </div>
+</section>
+
+<div class="next-section">
+  <div>
+    <div class="next-label">Continuar</div>
+    <div class="next-title">Casos clínicos</div>
+    <div class="next-desc">Casos documentados con patología, tratamiento y evolución fotográfica.</div>
+  </div>
+  <a href="casos.html" class="next-btn">Siguiente →</a>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+function openLb(el){
+  const img=el.querySelector('img')
+  const lbImg=document.getElementById('lb-img')
+  lbImg.innerHTML=img?`<img src="${img.src}" alt="${img.alt}">`:'<span style="color:rgba(255,255,255,.3);font-size:.9rem">Sin imagen</span>'
+  document.getElementById('lb').classList.add('open')
+}
+function closeLb(){document.getElementById('lb').classList.remove('open')}
+const carPos={}
+function carNext(id,total){carPos[id]=((carPos[id]||0)+1)%total;updateCar(id,total)}
+function carPrev(id,total){carPos[id]=((carPos[id]||0)-1+total)%total;updateCar(id,total)}
+function carGo(id,idx,total){carPos[id]=idx;updateCar(id,total)}
+function updateCar(id,total){
+  document.getElementById(id).style.transform=`translateX(-${carPos[id]*100}%)`
+  document.querySelectorAll(`#${id}-dots .car-dot`).forEach((d,i)=>d.classList.toggle('active',i===carPos[id]))
+}
+</script>
+</body>
+</html>

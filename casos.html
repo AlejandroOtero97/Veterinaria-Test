@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casos Clínicos – Ozonoterapia Veterinaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--teal:#0a7f72;--teal-lt:#0ea894;--teal-dim:#064d44;--teal-deep:#032e29;--cream:#f5f0e8;--ink:#0f1f1c;--mist:#e0f0ed;--accent:#c8f25a;--white:#fff;--gray:#6b7e7a;}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(3,46,41,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(14,168,148,.15)}
+.nav-logo{font-family:'Cormorant Garamond',serif;color:var(--cream);font-size:1.2rem;font-weight:600;letter-spacing:.05em;text-decoration:none}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(245,240,232,.65);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;padding:.3rem 0;border-bottom:1px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);border-color:var(--accent)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--cream)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(3,46,41,.98);padding:2rem;z-index:199;flex-direction:column;gap:1.2rem}
+.mobile-menu a{color:var(--cream);text-decoration:none;font-size:1rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.mobile-menu.open{display:flex}
+.page-header{min-height:40vh;background:var(--teal-deep);display:flex;align-items:flex-end;padding:6rem 4rem 3rem;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 20% 50%,rgba(14,168,148,.15) 0%,transparent 60%)}
+.ph-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.ph-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.1;color:var(--cream)}
+.ph-title em{font-style:italic;color:var(--teal-lt)}
+section{padding:5rem 4rem}
+.s-dark{background:var(--teal-deep);color:var(--cream)}
+.s-mid{background:var(--teal-dim);color:var(--cream)}
+.s-light{background:var(--cream)}
+.s-mist{background:var(--mist)}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
+.s-dark .eyebrow,.s-mid .eyebrow{color:var(--accent)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;margin-bottom:1rem}
+.sec-title em{color:var(--teal-lt)}
+.s-light .sec-title em,.s-mist .sec-title em{color:var(--teal)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.split.rev{direction:rtl}
+.split.rev>*{direction:ltr}
+.ph{background:linear-gradient(135deg,rgba(14,168,148,.12),rgba(10,127,114,.06));border:1px solid rgba(14,168,148,.15);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s,border-color .2s;min-height:200px;overflow:hidden;position:relative}
+.ph:hover{border-color:var(--teal-lt);transform:scale(1.01)}
+.ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block}
+.s-light .ph,.s-mist .ph{border-color:rgba(10,127,114,.2)}
+.lightbox{position:fixed;inset:0;background:rgba(3,46,41,.96);z-index:999;display:none;align-items:center;justify-content:center;cursor:pointer}
+.lightbox.open{display:flex}
+.lb-close{position:absolute;top:1.5rem;right:2rem;color:var(--cream);font-size:2rem;cursor:pointer;line-height:1}
+#lb-img img{max-width:90vw;max-height:85vh;border-radius:4px;display:block;pointer-events:none}
+.collage-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.collage-3{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:.75rem}
+.collage-3 .ph:first-child{grid-row:span 2}
+.collage-4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.75rem}
+.collage-5{display:grid;grid-template-columns:3fr 2fr;grid-template-rows:1fr 1fr;gap:.75rem}
+.collage-5 .ph:first-child{grid-row:span 2}
+.carousel-wrap{position:relative;overflow:hidden;border-radius:4px}
+.carousel-track{display:flex;transition:transform .4s ease}
+.carousel-track .ph{min-width:100%;min-height:300px;flex-shrink:0;border-radius:0}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(3,46,41,.7);border:none;color:var(--cream);font-size:1.4rem;padding:.5rem .9rem;cursor:pointer;z-index:2;border-radius:2px;transition:background .2s}
+.car-btn:hover{background:var(--teal)}
+.car-prev{left:.75rem}.car-next{right:.75rem}
+.car-dots{display:flex;justify-content:center;gap:.5rem;margin-top:.75rem}
+.car-dot{width:6px;height:6px;border-radius:50%;background:rgba(14,168,148,.3);cursor:pointer;transition:background .2s}
+.car-dot.active{background:var(--teal-lt)}
+.caso-header{margin-bottom:1.5rem}
+.caso-tag{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .65rem;border-radius:2px;margin-bottom:.7rem}
+.tag-derm{background:rgba(200,242,90,.1);color:var(--accent);border:1px solid rgba(200,242,90,.25)}
+.tag-osteo{background:rgba(14,168,148,.12);color:var(--teal-lt);border:1px solid rgba(14,168,148,.25)}
+.tag-ocular{background:rgba(100,180,230,.1);color:#7dd3f0;border:1px solid rgba(100,180,230,.2)}
+.tag-bucal{background:rgba(255,200,100,.08);color:#f0c060;border:1px solid rgba(255,200,100,.2)}
+.tag-cx{background:rgba(255,130,130,.08);color:#f09090;border:1px solid rgba(255,130,130,.2)}
+.caso-name{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1.1;margin-bottom:.2rem}
+.s-light .caso-name,.s-mist .caso-name{color:var(--ink)}
+.caso-sub{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.s-dark .caso-sub,.s-mid .caso-sub{color:rgba(245,240,232,.35)}
+.s-light .caso-sub,.s-mist .caso-sub{color:var(--gray)}
+.lp{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:1rem;margin-bottom:.3rem}
+.s-dark .lp,.s-mid .lp{color:var(--accent)}
+.s-light .lp,.s-mist .lp{color:var(--teal)}
+.ct{font-size:.88rem;line-height:1.75}
+.s-dark .ct,.s-mid .ct{color:rgba(245,240,232,.7)}
+.s-light .ct,.s-mist .ct{color:var(--gray)}
+.tx-block{background:rgba(14,168,148,.07);border-left:3px solid var(--teal-lt);border-radius:0 4px 4px 0;padding:1rem 1.4rem;margin-top:.8rem}
+.tx-block p{font-size:.86rem;line-height:1.75}
+.s-dark .tx-block p,.s-mid .tx-block p{color:rgba(245,240,232,.7)}
+.s-light .tx-block p,.s-mist .tx-block p{color:var(--gray)}
+.temario-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.tem-item{display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;background:rgba(14,168,148,.07);border:1px solid rgba(14,168,148,.15);border-radius:4px;transition:background .2s}
+.tem-item:hover{background:rgba(14,168,148,.12)}
+.tem-n{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:rgba(200,242,90,.2);line-height:1;flex-shrink:0;min-width:36px}
+.tem-text{font-size:.86rem;line-height:1.6;color:rgba(245,240,232,.75)}
+.contact-section{background:var(--teal-deep);padding:5rem 4rem;text-align:center;position:relative;overflow:hidden}
+.contact-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(14,168,148,.12) 0%,transparent 60%)}
+.contact-inner{position:relative;z-index:1;max-width:560px;margin:0 auto}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);color:var(--cream);margin-bottom:.5rem}
+.contact-sub{font-size:.9rem;color:rgba(245,240,232,.5);margin-bottom:2.5rem}
+.contact-links{display:flex;flex-direction:column;gap:.9rem;align-items:center;margin-bottom:2.5rem}
+.contact-link{display:flex;align-items:center;gap:.8rem;font-size:1rem;color:var(--cream);text-decoration:none;transition:color .2s}
+.contact-link:hover{color:var(--accent)}
+.contact-icon{width:36px;height:36px;border:1px solid rgba(14,168,148,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.restart-section{background:var(--teal-deep);border-top:1px solid rgba(200,242,90,.15);padding:4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.restart-label{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.4);margin-bottom:.5rem}
+.restart-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--cream)}
+.restart-desc{font-size:.85rem;color:rgba(245,240,232,.5);margin-top:.4rem;max-width:340px}
+.restart-btn{background:transparent;color:var(--accent);font-family:'Outfit',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 2.5rem;border-radius:3px;text-decoration:none;white-space:nowrap;flex-shrink:0;border:1px solid rgba(200,242,90,.4);transition:background .2s,color .2s}
+.restart-btn:hover{background:var(--accent);color:var(--ink)}
+@media(max-width:860px){
+  nav{padding:.9rem 1.2rem}.nav-links{display:none}.nav-burger{display:flex}
+  section{padding:3rem 1.4rem}.page-header{padding:5rem 1.4rem 2.5rem}
+  .split{grid-template-columns:1fr}.split.rev{direction:ltr}
+  .collage-2{grid-template-columns:1fr}.collage-3{grid-template-columns:1fr;grid-template-rows:auto}
+  .collage-3 .ph:first-child{grid-row:span 1}.collage-4{grid-template-columns:1fr}
+  .collage-5{grid-template-columns:1fr;grid-template-rows:auto}.collage-5 .ph:first-child{grid-row:span 1}
+  .temario-grid{grid-template-columns:1fr}
+  .restart-section{flex-direction:column;padding:3rem 1.4rem;text-align:center}.restart-desc{margin:0 auto}
+  .contact-section{padding:3rem 1.4rem}
+}
+</style>
+</head>
+<body>
+<div class="lightbox" id="lb" onclick="closeLb()">
+  <span class="lb-close">×</span>
+  <div id="lb-img"></div>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo">Soma<span>vet</span> Formación</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ozono</a></li>
+    <li><a href="patologias.html">Patologías</a></li>
+    <li><a href="casos.html" class="active">Casos Clínicos</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="index.html" onclick="toggleMenu()">Ozono</a>
+  <a href="patologias.html" onclick="toggleMenu()">Patologías</a>
+  <a href="casos.html" onclick="toggleMenu()">Casos Clínicos</a>
+</div>
+
+<div class="page-header">
+  <div style="position:relative;z-index:2">
+    <div class="ph-eyebrow">Ozonoterapia Veterinaria</div>
+    <h1 class="ph-title">Casos <em>clínicos</em><br>documentados</h1>
+  </div>
+</div>
+
+<!-- NANA — slides 42–45 -->
+<section class="s-dark" id="nana">
+  <div class="split">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-ocular">Oculares</span>
+        <div class="caso-name" style="font-size: 4em;">Nana</div>
+        <div class="caso-sub">Úlcera de córnea</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Úlcera de córnea</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Se realizó ozono en copa a 20 mcg ½ minuto y se repitió tres veces en la misma sesión.</p>
+    </div>
+    <div class="collage-3">
+      <div class="ph" style="min-height:300px" onclick="openLb(this)"><img src="img/imagen-31.png" alt="Nana previa"></div>
+      <div class="ph" style="min-height:140px" onclick="openLb(this)"><img src="img/imagen-32.png" alt="Nana durante"></div>
+      <div class="ph" style="min-height:140px" onclick="openLb(this)"><img src="img/imagen-33.png" alt="Nana posterior"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOAH — slides 46–51 -->
+<section class="s-light" id="noah">
+  <div class="caso-header">
+    <span class="caso-tag tag-derm">Dermatológica</span>
+    <div class="caso-name" style="font-size: 4em;" >Noah</div>
+    <div class="caso-sub">Quemadura de tercer grado – Escápula derecha</div>
+  </div>
+  <div class="split" style="margin-top:1.5rem">
+    <div>
+      <div class="lp">Patología</div>
+      <p class="ct">CX LIGAMENTOS CRUZADOS DE LA RODILLA TRA IZQ. INGRESA A CONSULTA POR LESION EN LA ZONA DE LA ESCAPULA DERECHA POR QUEMADURA DE TERCER GRADO.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Se aplica en la zona de la lesión: Ozono subcutáneo, en copa y aceite O3. Se indica continuar diariamente aplicando aceite ozonizado 3 veces por día y se dan indicaciones como ir bajando en forma gradual la Prednisolona y manejo de Tramadol. El mismo día empezó a comer y a mejorar su estado anímico. A la semana ya se notaba franca mejoría. Y se continuo con aplicaciones de aceite ozonizado diariamente y ozono subcutáneo semanalmente durante 1 mes.</p>
+    </div>
+    <div>
+<div>
+  <div class="collage-5">
+    <div class="ph" style="min-height:300px;position:relative" onclick="openLb(this)">
+      <img src="img/imagen-34.png" alt="Noah previo">
+      <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Noah previo</span>
+    </div>
+    <div class="ph" style="min-height:140px;position:relative" onclick="openLb(this)">
+      <img src="img/imagen-35.png" alt="Noah antes">
+      <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Noah antes</span>
+    </div>
+    <div class="ph" style="min-height:140px;position:relative" onclick="openLb(this)">
+      <img src="img/imagen-36.png" alt="Noah copa">
+      <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Noah copa</span>
+    </div>
+  </div>
+  <div class="collage-2" style="margin-top:.75rem">
+    <div class="ph" style="min-height:160px;position:relative" onclick="openLb(this)">
+      <img src="img/imagen-37.png" alt="Noah después">
+      <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Noah después</span>
+    </div>
+    <div class="ph" style="min-height:160px;position:relative" onclick="openLb(this)">
+      <img src="img/imagen-38.png" alt="Noah después">
+      <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Noah curado</span>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- AUTOHEMOTERAPIA MENOR — slides 52–53 -->
+<section class="s-mid" id="autohemo-derm">
+  <div class="split rev">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-derm">Dermatológica</span>
+        <div class="caso-name">Autohemoterapia Menor</div>
+        <div class="caso-sub">Demodexia con estafilococos</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Demodexia con estafilococos.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Aplicaciones de ozono subcutáneo en diversas áreas.<br>Autohemoterapia Menor</p>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-39.png" alt="Hemoterapia menor">
+    </div>
+  </div>
+</section>
+
+<!-- INDIO — slides 54–58 -->
+<section class="s-light" id="indio">
+  <div class="caso-header">
+    <span class="caso-tag tag-derm">Dermatológica</span>
+    <div class="caso-name" style="font-size: 4em;">Indio</div>
+    <div class="caso-sub">Post cx por torsión gástrica</div>
+  </div>
+  <div class="split" style="margin-top:1.5rem">
+    <div>
+      <div class="lp">Patología</div>
+      <p class="ct">POST CX POR TORSIÓN GÁSTRICA.<br>LESIÓN 7 DIAS DESPUÉS SIN CONTROL DE SUS DUEÑOS</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Se aplica en la zona de la lesión: Limpieza con solución fisiológica ozonizada y Bushing. Se indica continuar diariamente aplicando aceite diariamente. Evolución lenta. Último control con evolución favorable en 20 días.</p>
+    </div>
+<div class="collage-4">
+  <div class="ph" style="min-height:250px;position:relative" onclick="openLb(this)">
+    <img src="img/imagen-40.png" alt="Indio torsión">
+    <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Indio torsión</span>
+  </div>
+  <div class="ph" style="min-height:250px;position:relative" onclick="openLb(this)">
+    <img src="img/imagen-42.png" alt="Indio posterior">
+    <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Indio posterior</span>
+  </div>
+  <div class="ph" style="min-height:250px;position:relative" onclick="openLb(this)">
+    <img src="img/imagen-41.png" alt="Indio posterior">
+    <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Indio posterior</span>
+  </div>
+  <div class="ph" style="min-height:250px;position:relative" onclick="openLb(this)">
+    <img src="img/imagen-43.png" alt="Indio posterior">
+    <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Indio posterior</span>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- FELIX — slides 59–60 -->
+<section class="s-dark" id="felix">
+  <div class="split rev">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-bucal">Bucales</span>
+        <div class="caso-name" style="font-size: 4em;">Felix</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">NO COMIA. VALORES DE LABORATORIO NORMALES<br><br>RX Espacios intervertebrales y componentes óseos de columna toracolumbar, lumbar y lumbosacra de aspecto radiográfico normal para la edad del paciente. No se observan signos radiográficos sugerentes de descoparías en las incidencias realizadas.<br><br>Ambas articulaciones coxofemorales de aspecto radiográfico normal y ambas rotulas en posición normal en las incidencias realizadas.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Enfermedad periodontal. Se aplicó ozono subcutáneo en las articulaciones temporomandibulares</p>
+    </div>
+    <div class="ph" style="min-height:380px" onclick="openLb(this)">
+      <img src="img/imagen-44.png" alt="Felix">
+    </div>
+  </div>
+</section>
+
+<!-- MUSCULOTENDINOSAS — slide 61 -->
+<section class="s-mist" id="musculo">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="sec-title">Musculo<em>tendinosas</em></div>
+      <div class="lp">Tratamiento</div>
+      <div class="tx-block">
+        <p>Ozono local:<br>Intramuscular - perilesional / subcutáneo<br>intramuscular combinado con PRP ozonizado<br>perilesional tendinoso idem PRP.</p>
+      </div>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-45.png" alt="Musculotendinosas">
+    </div>
+  </div>
+</section>
+
+<!-- OSTEOARTICULARES — slide 62 -->
+<section class="s-mid" id="osteo">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow">Patologías</p>
+      <div class="sec-title">Osteo<em>articulares</em></div>
+      <p class="ct" style="margin-bottom:.5rem">Columna: espondiloartrosis, calcificación de discos, hernias discales, hematomas por traumatismo</p>
+      <div class="lp">Tratamiento</div>
+      <div class="tx-block"><p>Local: ozono paravertebral subcutáneo</p></div>
+      <p class="ct" style="margin-top:1rem;margin-bottom:.5rem">Articulaciones: artrosis, artritis séptica</p>
+      <div class="lp">Tratamiento</div>
+      <div class="tx-block"><p>Local: ozono intrarticular, periarticular<br>intrarticular regenerativo combinado con PRP</p></div>
+    </div>
+    <div class="ph" style="min-height:500px" onclick="openLb(this)">
+      <img src="img/imagen-46.png" alt="Osteoarticulares">
+    </div>
+  </div>
+</section>
+
+<!-- ALFITA — slides 63–66 -->
+<section class="s-light" id="alfita">
+  <div class="caso-header">
+    <span class="caso-tag tag-osteo">Osteoarticulares</span>
+    <div class="caso-name" style="font-size: 4em;">Alfita</div>
+    <div class="caso-sub">Parálisis tren trasero</div>
+  </div>
+  <div class="split" style="margin-top:1.5rem">
+    <div>
+      <div class="lp">Patología</div>
+      <p class="ct">Ingreso por parálisis en tren trasero sin poder orinar ni defectar. Dolor en columna cervical, lumbosacro. Propiocepción negativo y reflejo de retirada disminuido en ambos miembros posteriores. Vejiga pequeña, no hay materia fecal en recto.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Se aplico Ozono subcutáneo. 24 hs posteriores vuelve a control y con evolución favorable, orino y defeco sola. MPI propiocepción presente, mpd propiocepcion negativa. Mueve los miembros posteriores, no mantiene la estación todavia. Después de la tercera sesión de ozonoterapia, hay muy buena evolución, camina moviendo los 4 miembros con ayuda, le falta tonicidad ms. Se indican ejercicios de estimulación en m. post y cola. Se realiza una sesión de Terapia Neural y al día siguiente comenzó a caminar, y se mantiene en estación. Se sigue realizando sesiones de ozono una vez por semana, Continua la mejoría en cuando a la deambulación y sensibilidad. Ozonoterapia cada 15 días.</p>
+    </div>
+<div class="collage-3">
+  <div class="ph" style="min-height:300px;position:relative" onclick="openLb(this)">
+    <img src="img/imagen-47.png" alt="Alfita antes">
+    <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Alfita antes</span>
+  </div>
+  <div class="ph" style="min-height:140px;position:relative" onclick="openLb(this)">
+    <img src="img/imagen-48.png" alt="Alfita antes">
+    <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Alfita antes</span>
+  </div>
+  <div class="ph" style="min-height:140px;position:relative" onclick="openLb(this)">
+    <img src="img/imagen-49.png" alt="Alfita después">
+    <span style="position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(to top,rgba(3,46,41,.85),transparent);color:#f5f0e8;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none">Alfita después</span>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- BRISA — slides 67–69 -->
+<section class="s-dark" id="brisa">
+  <div class="split rev">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-osteo">Osteoarticulares</span>
+        <div class="caso-name" style="font-size: 4em;">Brisa</div>
+        <div class="caso-sub">Espondiloartrosis</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Espondiloartrosis.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Aplicaciones de ozono subcutáneo y paravertebral.<br><br>Recuperación en la primera aplicación.</p>
+    </div>
+    <div class="collage-2">
+      <div class="ph" style="min-height:280px" onclick="openLb(this)"><img src="img/imagen-50.png" alt="Brisa"></div>
+      <div class="ph" style="min-height:280px" onclick="openLb(this)"><img src="img/imagen-51.png" alt="Brisa"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TITÁN — slides 70–71 -->
+<section class="s-mist" id="titan">
+  <div class="split">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-osteo">Osteoarticulares</span>
+        <div class="caso-name" style="font-size: 4em;">Titán</div>
+        <div class="caso-sub">Cuadriplejia por compresión cervical C6–C7</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Cuadriplejia por compresión cervical C6 – C7</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Ozono paravertebral.<br>Dos aplicaciones – diferencia de tres días.<br><br>Recuperación en la última aplicación.</p>
+    </div>
+    <div class="ph" style="min-height:500px" onclick="openLb(this)">
+      <img src="img/imagen-52.png" alt="Titán">
+    </div>
+  </div>
+</section>
+
+<!-- LUCHO — slides 72–74 -->
+<section class="s-mid" id="lucho">
+  <div class="split rev">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-osteo">Osteoarticulares</span>
+        <div class="caso-name" style="font-size: 4em;">Lucho</div>
+        <div class="caso-sub">Paraplejia – lesión no quirúrgica</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Ingreso parapléjico, derivado por colega.<br>Lesión no quirúrgica.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Se aplico Ozono paravertebral por tres días consecutivos y volvió caminando.</p>
+    </div>
+    <div class="ph" style="min-height:500px" onclick="openLb(this)">
+      <img src="img/imagen-53.png" alt="Titán">
+    </div>
+  </div>
+</section>
+
+<!-- KOFEE — slide 75 -->
+<section class="s-light" id="kofee">
+  <div class="split">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-osteo">Osteoarticulares · Ozono + Fisio</span>
+        <div class="caso-name" style="font-size: 4em;">Kofee</div>
+        <div class="caso-sub">Mestiza – 8 años</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Se observa disminución del espacio intervertebral T12-13. Esclerosis sacra</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Se realizaron dos sesiones de ozono subcutáneo y luego se complementa con sesiones semanales de Fisio.<br>Ol-Trans Flex / Arnica a la 6.</p>
+    </div>
+    <div class="ph" style="min-height:500px" onclick="openLb(this)">
+      <img src="img/imagen-54.png" alt="Kofee">
+    </div>
+  </div>
+</section>
+
+<!-- LORENZO — slides 76–77 -->
+<section class="s-dark" id="lorenzo">
+  <div class="split rev">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-osteo">Osteoarticulares · Ozono + Fisio</span>
+        <div class="caso-name" style="font-size: 4em;">Lorenzo</div>
+        <div class="caso-sub">Dachshund – 7 años</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">RMN: Enfermedad degenerativa compresiva discal múltiple, con lesiones mas significativas en los espacios L2-L3 y T12-T13. Signos de espondiloartrosis. Hemivertebras múltiples. Llega posterior a una cx por descompresión de lumbares.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Poca sensibilidad superior y sin sensibilidad profunda. Infección urinaria a repetición. Se realizaron dos sesiones de ozono subcutáneo y hubo mejora en el tono muscular pero no caminaba. Se complementa con sesiones semanales de Fisio.</p>
+    </div>
+    <div class="ph" style="min-height:560px" onclick="openLb(this)">
+      <img src="img/imagen-55.png" alt="Lorenzo">
+    </div>
+  </div>
+</section>
+
+<!-- BLUE — slides 78–81 -->
+<section class="s-mist" id="blue">
+  <div class="caso-header">
+    <span class="caso-tag tag-osteo">Osteoarticulares</span>
+    <div class="caso-name" style="font-size: 4em;">Blue</div>
+    <div class="caso-sub">5 años</div>
+  </div>
+  <div class="split" style="margin-top:1.5rem">
+    <div>
+      <div class="lp" style="color:var(--teal)">Patología 2021</div>
+      <p class="ct">RX Severa Hemivertebra en T9 con desplazamiento del cuerpo vertebral hacia dorsal</p>
+      <div class="lp" style="color:var(--teal)">Tratamiento</div>
+      <p class="ct">Ozono paravertebral/Subcutáneo</p>
+    </div>
+    <div class="collage-2">
+      <div class="ph" style="min-height:300px" onclick="openLb(this)"><img src="img/imagen-56.png" alt="Blue dolor"></div>
+      <div class="ph" style="min-height:300px" onclick="openLb(this)"><img src="img/imagen-57.png" alt="Blue Giacossa"></div>
+    </div>
+  </div>
+  <div class="split rev" style="margin-top:3rem">
+    <div>
+      <div class="lp" style="color:var(--teal)">Patología 2024</div>
+      <p class="ct">RX Transición CT conservada, en dorsal del espacio intervertebral entre C5-C6 se observa un aumento de radio densidad, mineralización incipiente de disco intervertebral?, se sospecha mismo proceso, con menor intensidad a nivel C4-C5, se sugiere control radiográfico.</p>
+      <div class="lp" style="color:var(--teal)">Tratamiento</div>
+      <p class="ct">Resolución CX</p>
+    </div>
+    <div class="ph" style="min-height:280px" onclick="openLb(this)">
+      <img src="img/imagen-58.png" alt="Blue diagnóstico 2024">
+    </div>
+  </div>
+</section>
+
+<!-- MORGAN — slides 82–83 -->
+<section class="s-mid" id="morgan">
+  <div class="split">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-cx">Resolución CX</span>
+        <div class="caso-name" style="font-size: 4em;">Morgan</div>
+        <div class="caso-sub">Dachshund – 7 años</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Estaba caminando y comenzó a claudicar, posición antiálgica. Se aplico Dexa, Tramadol y se indica RX.<br><br>RX Estrechez de los espacios T12-T13 y T13-L1. Discopatias mineralizadas con extrusión de material discal en los espacios L1-L2 y L2-L3.<br><br>En 24 hs quedó paralítico, miembros posteriores extendidos hacia craneal. Retención de orina, no defeca. Alerta, come bien.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Resolución CX</p>
+    </div>
+    <div class="collage-2">
+      <div class="ph" style="min-height:350px" onclick="openLb(this)"><img src="img/imagen-59.png" alt="Morgan"></div>
+      <div class="ph" style="min-height:350px" onclick="openLb(this)"><img src="img/imagen-60.png" alt="Morgan"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOA — slides 84–85 -->
+<section class="s-light" id="noa">
+  <div class="split rev">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-cx">Resolución CX</span>
+        <div class="caso-name" style="font-size: 4em;">Noah</div>
+        <div class="caso-sub">BDF – 2 años</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Ingresa en brazos, camina con xifosis, abdomen tenso, jadea, mucosas rosadas, temp 39.2C. Grita al rozarle la columna lumbar/lumbosacra.<br><br>Responde bien a la primer sesión de ozono. En 48 hs quedó paralítica, miembros posteriores extendidos hacia craneal. Retención de orina, no defeca. Alerta, come bien. Se solicita RMN.</p>
+      <div class="lp">Tratamiento</div>
+      <br>
+      <p class="ct">Resolución CX<br>Conclusion: Imágenes obtenidas de columna cervical, compatibles con afección compresiva y degenerativa discalmúltiple, con lesión de mayor relevancia a nivel C3-4, según descripción previa.</p>
+    </div>
+    <div class="ph" style="min-height:500px" onclick="openLb(this)">
+      <img src="img/imagen-61.png" alt="Noa diagnóstico">
+    </div>
+  </div>
+</section>
+
+<!-- PRE Y POST QUIRÚRGICOS — slide 86 -->
+<section class="s-dark" id="pre-post-cx">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Pre y post quirúrgicos</p>
+      <div class="sec-title"><em>Tratamiento</em></div>
+      <div class="tx-block"><p>Ozono endovenoso: suero glucosado<br><br>Rápida evolución y cicatrización</p></div>
+    </div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)">
+      <img src="img/imagen-62.png" alt="Pre y post quirúrgicos">
+    </div>
+  </div>
+</section>
+
+<!-- QUELÓNIDO — slides 87–88 -->
+<section class="s-mist" id="quelonido">
+  <div class="split rev">
+    <div>
+      <div class="caso-header">
+        <span class="caso-tag tag-cx">Post-quirúrgico</span>
+        <div class="caso-name" style="font-size: 4em;">Quelónido</div>
+      </div>
+      <div class="lp">Patología</div>
+      <p class="ct">Cicatrización de herida miembro posterior por miasis 48hs después de la cirugía.</p>
+      <div class="lp">Tratamiento</div>
+      <p class="ct">Ozono · bagging<br>Dos aplicaciones – diferencia de tres días.<br><br>Recuperación en la última aplicación.</p>
+    </div>
+    <div class="ph" style="min-height:520px" onclick="openLb(this)">
+      <img src="img/imagen-63.png" alt="Quelónido">
+    </div>
+  </div>
+</section>
+
+<!-- TOLERANCIA INMUNOLÓGICA + GLUCOSAMINA — slides 89–90 — carrusel -->
+<section class="s-dark">
+  <p class="eyebrow" style="margin-bottom:1.2rem">Tolerancia inmunológica oral al colágeno · +Glucosamina +Condroitin +MSM</p>
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="car2">
+      <div class="ph" style="min-height:800px;border-radius:0" onclick="openLb(this)"><img src="img/imagen-64.png" alt="Tolerancia inmunológica 1"></div>
+      <div class="ph" style="min-height:800px;border-radius:0" onclick="openLb(this)"><img src="img/imagen-65.png" alt="Tolerancia inmunológica 2"></div>
+      <div class="ph" style="min-height:800px;border-radius:0" onclick="openLb(this)"><img src="img/imagen-66.png" alt="Tolerancia inmunológica 3"></div>
+      <div class="ph" style="min-height:800px;border-radius:0" onclick="openLb(this)"><img src="img/imagen-67.png" alt="Glucosamina 1"></div>
+      <div class="ph" style="min-height:800px;border-radius:0" onclick="openLb(this)"><img src="img/imagen-68.png" alt="Glucosamina 2"></div>
+    </div>
+    <button class="car-btn car-prev" onclick="carPrev('car2',5)">‹</button>
+    <button class="car-btn car-next" onclick="carNext('car2',5)">›</button>
+  </div>
+  <div class="car-dots" id="car2-dots">
+    <div class="car-dot active" onclick="carGo('car2',0,5)"></div>
+    <div class="car-dot" onclick="carGo('car2',1,5)"></div>
+    <div class="car-dot" onclick="carGo('car2',2,5)"></div>
+    <div class="car-dot" onclick="carGo('car2',3,5)"></div>
+    <div class="car-dot" onclick="carGo('car2',4,5)"></div>
+  </div>
+</section>
+
+<!-- BENEFICIOS + OZONIZACIÓN DE ACEITE — slides 91–93 -->
+<section class="s-mid">
+  <p class="eyebrow" style="margin-bottom:1.2rem">Beneficios del ozono · Protocolo de Montreal</p>
+  <div class="collage-2">
+    <div class="ph" style="min-height:600px" onclick="openLb(this)"><img src="img/imagen-69.png" alt="Beneficios del ozono"></div>
+    <div class="ph" style="min-height:600px" onclick="openLb(this)"><img src="img/imagen-70.png" alt="Protocolo de Montreal"></div>
+
+  </div>
+</section>
+
+<!-- TEMARIO — slides 94–95 -->
+<section class="s-dark" id="temario">
+  <p class="eyebrow">Temario del curso</p>
+  <h2 class="sec-title">Contenido <em>del programa</em></h2>
+  <div class="temario-grid">
+    <div class="tem-item"><div class="tem-n">1</div><div class="tem-text">Física y Química del Ozono.</div></div>
+    <div class="tem-item"><div class="tem-n">2</div><div class="tem-text">Vías de Administración en Veterinaria.</div></div>
+    <div class="tem-item"><div class="tem-n">3</div><div class="tem-text">Usos y aplicaciones del Ozono en diversas patologías.</div></div>
+    <div class="tem-item"><div class="tem-n">4</div><div class="tem-text">Técnicas, materiales y procedimientos.</div></div>
+    <div class="tem-item"><div class="tem-n">5</div><div class="tem-text">Técnica de infiltración (subcutánea, intrarticular, intramuscular, paravertebral, intracelómica, intraperitoneal)</div></div>
+    <div class="tem-item"><div class="tem-n">6</div><div class="tem-text">Autohemoterapia menor.</div></div>
+    <div class="tem-item"><div class="tem-n">7</div><div class="tem-text">Sueros ozonizados endovenosos.</div></div>
+    <div class="tem-item"><div class="tem-n">8</div><div class="tem-text">Procedimiento de insuflación en bolsa.</div></div>
+    <div class="tem-item"><div class="tem-n">9</div><div class="tem-text">Técnica preparación de cremas, agua y aceites ozonizados.</div></div>
+    <div class="tem-item"><div class="tem-n">10</div><div class="tem-text">Casos clínicos.</div></div>
+  </div>
+</section>
+
+<!-- CONTACTO — slide 96 -->
+<section class="contact-section" id="contacto">
+  <div class="contact-inner">
+    <p class="eyebrow" style="text-align:center;margin-bottom:.6rem">Información</p>
+    <h2 class="contact-title">Para información</h2>
+    <p class="contact-sub">Consultá sobre el curso y los próximos turnos</p>
+    <div class="contact-links">
+      <a href="mailto:somavetformacion@gmail.com" class="contact-link">
+        <span class="contact-icon">✉</span>
+        somavetformacion@gmail.com
+      </a>
+      <a href="https://instagram.com/somavetformacion" target="_blank" class="contact-link">
+        <span class="contact-icon">◎</span>
+        @somavetformacion
+      </a>
+    </div>
+    <div class="ph" style="min-height:220px;max-width:520px;margin:0 auto" onclick="openLb(this)">
+      <img src="img/Logo.png" alt="Somavet Formación">
+    </div>
+  </div>
+</section>
+
+<!-- RESTART -->
+<div class="restart-section">
+  <div>
+    <div class="restart-label">Volver al inicio</div>
+    <div class="restart-title">Comenzar de nuevo</div>
+    <div class="restart-desc">Revisá los fundamentos del ozono, sus propiedades y mecanismo de acción.</div>
+  </div>
+  <a href="index.html" class="restart-btn">← Volver al inicio</a>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+function openLb(el){
+  const img=el.querySelector('img')
+  const lbImg=document.getElementById('lb-img')
+  lbImg.innerHTML=img?`<img src="${img.src}" alt="${img.alt}">`:'<span style="color:rgba(255,255,255,.3);font-size:.9rem">Sin imagen</span>'
+  document.getElementById('lb').classList.add('open')
+}
+function closeLb(){document.getElementById('lb').classList.remove('open')}
+const carPos={}
+function carNext(id,total){carPos[id]=((carPos[id]||0)+1)%total;updateCar(id,total)}
+function carPrev(id,total){carPos[id]=((carPos[id]||0)-1+total)%total;updateCar(id,total)}
+function carGo(id,idx,total){carPos[id]=idx;updateCar(id,total)}
+function updateCar(id,total){
+  document.getElementById(id).style.transform=`translateX(-${carPos[id]*100}%)`
+  document.querySelectorAll(`#${id}-dots .car-dot`).forEach((d,i)=>d.classList.toggle('active',i===carPos[id]))
+}
+</script>
+</body>
+</html>
