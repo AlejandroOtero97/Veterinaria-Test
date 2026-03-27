@@ -1,1 +1,3 @@
 Incorporar videos mp4 de la veterinaria con efectos y animación con hover
+
+De la misma manera que esta incorporado el nuevo gif/video con el estilo que saque ayer, puedo hacer una especie de carrusel que cada vez que clickeas se vea la próxima foto y usarlo para todo los animales en vez de collage pedorro de imágenes.
