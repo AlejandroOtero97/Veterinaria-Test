@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+}
+    .hero {
+  padding: 100px 40px;
+  background: #f8fafc;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* TEXT */
+.hero-text {
+  flex: 1;
+  max-width: 520px;
+}
+
+/* TAG */
+.hero-text .tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #0ea5a4; /* teal similar al de la imagen */
+  margin-bottom: 12px;
+}
+
+/* TITULO */
+.hero-text h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+/* PARRAFOS */
+.hero-text p {
+  font-size: 18px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* VISUAL */
+.hero-visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* SHAPE DE FONDO */
+.bg-shape {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  border-radius: 20px;
+  transform: rotate(-6deg);
+  z-index: 0;
+
+  /* sombra en vez de blur */
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* CARD DEL VIDEO */
+.video-card {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+
+  /* animación suave */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.video-card:hover {
+  transform: skewY(-2deg) scale(1.02);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.25);
+}
+.video-card img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+}
+</style>
+<body>
+    <section class="hero">
+        <div class="hero-container">
+            
+            <!-- Texto -->
+            <div class="hero-text">
+            <span class="tag">RESPONSIVE DESIGN</span>
+            <h1>Una nueva forma de sanar.</h1>
+            <p>
+                La ozonoterapia es un tratamiento innovador que ayuda a reducir el dolor, acelerar la recuperación y 
+                fortalecer el sistema inmunológico de tu mascota de forma segura y efectiva.
+            </p>
+            <p>
+                Ideal para tratar lesiones, inflamaciones y diversas patologías, este enfoque terapéutico 
+                complementa los tratamientos tradicionales y mejora el bienestar general.
+            </p>
+            </div>
+
+            <!-- Visual (GIF + fondo + sombra) -->
+            <div class="hero-visual">
+            <div class="bg-shape"></div>
+
+            <div class="video-card">
+                <img src="test.gif" alt="preview" />
+            </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
