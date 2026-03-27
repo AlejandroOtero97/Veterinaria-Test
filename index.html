@@ -16,34 +16,39 @@ html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(3,46,41,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(14,168,148,.15)}
-.nav-logo{font-family:'Cormorant Garamond',serif;color:var(--cream);font-size:1.2rem;font-weight:600;letter-spacing:.05em;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(3,46,41,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(14,168,148,.15);box-shadow:4px 8px 5px rgba(0,0,0,0.3)}
+.nav-logo{font-family:'Cormorant Garamond',serif;color:var(--cream);font-size:1.5rem;font-weight:600;letter-spacing:.05em;text-decoration:none}
 .nav-logo span{color:var(--accent)}
 .nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:rgba(245,240,232,.65);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;padding:.3rem 0;border-bottom:1px solid transparent}
+.nav-links a{color:rgba(245,240,232,.65);text-decoration:none;font-size:1rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;padding:.3rem 0;border-bottom:1px solid transparent}
 .nav-links a:hover,.nav-links a.active{color:var(--accent);border-color:var(--accent)}
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem}
 .nav-burger span{display:block;width:24px;height:2px;background:var(--cream)}
 .mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(3,46,41,.98);padding:2rem;z-index:199;flex-direction:column;gap:1.2rem}
-.mobile-menu a{color:var(--cream);text-decoration:none;font-size:1rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.mobile-menu a{color:var(--cream);text-decoration:none;font-size:1.3rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .mobile-menu.open{display:flex}
 
 /* HERO — centered, no image */
 .hero{min-height:100vh;background:var(--teal-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:8rem 2rem 5rem}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(14,168,148,.16) 0%,transparent 65%),radial-gradient(ellipse 40% 40% at 10% 90%,rgba(200,242,90,.05) 0%,transparent 55%);animation:bgshift 10s ease-in-out infinite alternate}
+.hero-bg{position:absolute;inset:0;background-image: url('CHATGPTimage4.png'); background-size: cover; background-position: center; background-repeat: no-repeat;}
 @keyframes bgshift{from{opacity:.7}to{opacity:1}}
-.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(14,168,148,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(14,168,148,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+
 .hero-content{position:relative;z-index:2;max-width:820px}
-.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,242,90,.1);border:1px solid rgba(200,242,90,.3);color:var(--accent);font-size:.72rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.35rem .9rem;border-radius:2px;margin-bottom:2rem;animation:fadeUp .5s ease both}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,7vw,6rem);line-height:1.05;color:var(--cream);margin-bottom:1.6rem;animation:fadeUp .6s .1s ease both}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,242,90,.1);border:1px solid rgba(200,242,90,.3);color:var(--accent);font-size:1rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.35rem .9rem;border-radius:2px;margin-bottom:2rem;animation:fadeUp .5s ease both}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,7vw,6rem);line-height:1.05;color:rgb(36, 36, 36);margin-bottom:1.6rem;animation:fadeUp .6s .1s ease both}
 .hero-title em{font-style:italic;color:var(--teal-lt)}
-.hero-sub{font-size:1.05rem;line-height:1.8;color:rgba(245,240,232,.6);max-width:580px;margin:0 auto 2.8rem;animation:fadeUp .6s .2s ease both}
+.hero-initial{position:relative;display:inline-block;white-space:nowrap}
+.hero-initial::after{content:'';position:absolute;left:0;right:0;bottom:8px;height:5px;background:#000;opacity:1}
+.hero-sub{font-size:1.4rem;line-height:1.8;color:rgba(22, 22, 22, 0.76);max-width:580px;margin:0 auto 2.8rem;animation:fadeUp .6s .2s ease both}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .6s .3s ease both}
-.btn-primary{background:var(--accent);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:.85rem 2rem;border:none;border-radius:3px;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block}
+.btn-primary{background:var(--accent);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase;padding:.85rem 2rem;border:none;border-radius:3px;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,242,90,.25)}
-.btn-ghost{background:transparent;color:var(--cream);font-family:'Outfit',sans-serif;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:.85rem 2rem;border:1px solid rgba(245,240,232,.25);border-radius:3px;cursor:pointer;text-decoration:none;transition:border-color .2s;display:inline-block}
-.btn-ghost:hover{border-color:var(--cream)}
+.btn-ghost{background:rgba(141, 141, 141, 0.548);color:rgb(22, 22, 22);font-family:'Outfit',sans-serif;font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase;padding:.85rem 2rem;border:1px solid rgba(245,240,232,.25);border-radius:3px;cursor:pointer;text-decoration:none;transition:border-color .2s;display:inline-block}
+.btn-ghost:hover{border-color:black}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes btn-glow-shine{0%{box-shadow:inset 0 0 20px rgba(200,242,90,.3),0 0 20px rgba(200,242,90,.4),0 0 40px rgba(200,242,90,.2)}25%{box-shadow:inset 0 0 30px rgba(200,242,90,.5),0 0 30px rgba(200,242,90,.6),0 0 60px rgba(200,242,90,.3),0 0 80px rgba(200,242,90,.1)}50%{box-shadow:inset 0 0 15px rgba(200,242,90,.2),0 0 25px rgba(200,242,90,.35),0 0 50px rgba(200,242,90,.15)}75%{box-shadow:inset 0 0 28px rgba(200,242,90,.4),0 0 35px rgba(200,242,90,.5),0 0 70px rgba(200,242,90,.25)}100%{box-shadow:inset 0 0 20px rgba(200,242,90,.3),0 0 20px rgba(200,242,90,.4),0 0 40px rgba(200,242,90,.2)}}
+@keyframes btn-lift-float{0%{transform:translateY(0px)}50%{transform:translateY(-6px)}100%{transform:translateY(0px)}}
+.hero-cta .btn-primary{animation:btn-glow-shine 3.5s ease-in-out infinite,btn-lift-float 3.2s ease-in-out infinite;position:relative}
 .hero-mol{position:absolute;right:-60px;bottom:-60px;width:500px;opacity:.04;animation:spin 50s linear infinite;pointer-events:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 
@@ -53,37 +58,54 @@ section{padding:5rem 4rem}
 .s-mid{background:var(--teal-dim);color:var(--cream)}
 .s-light{background:var(--cream)}
 .s-mist{background:var(--mist)}
-.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
 .s-dark .eyebrow,.s-mid .eyebrow{color:var(--accent)}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;margin-bottom:1rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,3.5vw,3.4rem);line-height:1.2;margin-bottom:1rem}
 .sec-title em{color:var(--teal-lt)}
 .s-light .sec-title em,.s-mist .sec-title em{color:var(--teal)}
-.sec-body{font-size:.92rem;line-height:1.8;color:var(--gray);max-width:680px}
+.sec-body{font-size:1.3rem;line-height:1.8;color:var(--gray);max-width:680px}
 .s-dark .sec-body,.s-mid .sec-body{color:rgba(245,240,232,.7)}
 
 /* OBJETIVOS */
 .objetivos-wrap{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
 .obj-label{font-family:'Cormorant Garamond',serif;font-size:5rem;line-height:1;color:rgba(200,242,90,.12);font-weight:600}
-.obj-text{font-size:1.05rem;line-height:1.9;color:rgba(245,240,232,.75);font-weight:300}
+.obj-text{font-size:1.4rem;line-height:1.9;color:rgba(245,240,232,.75);font-weight:300}
 
 /* OZONO */
 .ozono-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3rem}
 .tag-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
-.tag{background:rgba(14,168,148,.15);border:1px solid rgba(14,168,148,.3);color:var(--teal-lt);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .65rem;border-radius:2px}
+.tag{background:rgba(14,168,148,.15);border:1px solid rgba(14,168,148,.3);color:var(--teal-lt);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .65rem;border-radius:2px}
 .props-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
-.prop-card{background:rgba(255,255,255,.04);border:1px solid rgba(14,168,148,.2);border-radius:4px;padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:border-color .25s,transform .25s}
-.prop-card:hover{border-color:var(--teal-lt);transform:translateY(-3px)}
-.prop-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--teal-lt);transform:scaleX(0);transform-origin:left;transition:.3s}
-.prop-card:hover::after{transform:scaleX(1)}
+.prop-card{background:rgba(255,255,255,.04);border:1px solid rgba(14,168,148,.2);border-radius:4px;padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer;min-height:260px}
+.prop-card.revealed{border-color:var(--accent);transform:translateY(-4px);cursor:default}
+.prop-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:.4s}
+.prop-card.revealed::after{transform:scaleX(1)}
+.prop-card-inner{transition:filter .45s ease,opacity .45s ease}
+.prop-card:not(.revealed) .prop-card-inner{filter:blur(7px);opacity:.3;user-select:none;pointer-events:none}
+.prop-lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;z-index:2;transition:opacity .35s ease}
+.prop-card.revealed .prop-lock{opacity:0;pointer-events:none}
+.prop-lock-rings{position:relative;width:56px;height:56px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prop-lock-ring{position:absolute;border-radius:50%;border:1.5px solid rgba(200,242,90,.35);animation:lockPulse 2.2s ease-in-out infinite}
+.prop-lock-ring:nth-child(1){width:56px;height:56px}
+.prop-lock-ring:nth-child(2){width:38px;height:38px;animation-delay:.5s;border-color:rgba(200,242,90,.5)}
+.prop-lock-icon{font-size:1.4rem;position:relative;z-index:1}
+@keyframes lockPulse{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+.prop-lock-text{font-size:.82rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(245,240,232,.6);text-align:center;line-height:1.6;max-width:120px;transition:color .2s}
+.prop-card:not(.revealed):hover .prop-lock-text{color:var(--accent)}
+.prop-card:not(.revealed):hover{border-color:rgba(200,242,90,.4);transform:translateY(-2px)}
+@keyframes cardReveal{0%{transform:translateY(0) scale(1)}25%{transform:translateY(-10px) scale(1.04)}60%{transform:translateY(-2px) scale(.98)}100%{transform:translateY(-4px) scale(1)}}
+.prop-card.revealing{animation:cardReveal .55s cubic-bezier(.22,.68,0,1.4) forwards}
 .prop-icon{font-size:1.5rem;margin-bottom:.8rem;display:block}
-.prop-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--cream);margin-bottom:.3rem}
-.prop-val{display:inline-block;font-size:.7rem;font-weight:600;color:var(--accent);background:rgba(200,242,90,.1);padding:.15rem .5rem;border-radius:2px;margin-bottom:.6rem;letter-spacing:.06em}
-.prop-desc{font-size:.85rem;line-height:1.65;color:rgba(245,240,232,.6)}
+.prop-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--cream);margin-bottom:.3rem}
+.prop-val{display:inline-block;font-size:1rem;font-weight:600;color:var(--accent);background:rgba(200,242,90,.1);padding:.15rem .5rem;border-radius:2px;margin-bottom:.6rem;letter-spacing:.06em}
+.prop-desc{font-size:1.2rem;line-height:1.65;color:rgba(245,240,232,.6)}
+.confetti-piece{position:fixed;pointer-events:none;z-index:9999;border-radius:2px;animation:confettiFall var(--dur,1s) ease-out forwards}
+@keyframes confettiFall{0%{transform:translate(0,0) rotate(0deg) scale(1);opacity:1}75%{opacity:.9}100%{transform:translate(var(--tx,0px),var(--ty,80px)) rotate(var(--rot,360deg)) scale(.3);opacity:0}}
 .conc-box{margin-top:3rem;background:rgba(14,168,148,.08);border:1px solid rgba(14,168,148,.2);border-radius:4px;padding:2rem 2.5rem}
-.conc-title{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:600}
-.conc-code{font-family:'Courier New',monospace;font-size:.9rem;line-height:2;color:rgba(245,240,232,.8)}
+.conc-title{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:600}
+.conc-code{font-family:'Courier New',monospace;font-size:1.2rem;line-height:2;color:rgba(245,240,232,.8)}
 .conc-code strong{color:var(--accent)}
-.conc-note{font-size:.75rem;color:rgba(245,240,232,.4);margin-top:.8rem}
+.conc-note{font-size:1rem;color:rgba(245,240,232,.4);margin-top:.8rem}
 
 /* PHOTOS & LIGHTBOX */
 .collage-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:2rem}
@@ -98,51 +120,120 @@ section{padding:5rem 4rem}
 #lb-img img{max-width:90vw;max-height:85vh;border-radius:4px;display:block;pointer-events:none}
 
 /* MECANISMO */
-.mec-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2rem}
-.mec-steps{display:flex;flex-direction:column}
-.mec-step{display:flex;gap:1.2rem;padding:1.4rem 0;border-bottom:1px solid rgba(14,168,148,.15)}
-.mec-step:last-child{border-bottom:none}
-.mec-n{font-family:'Cormorant Garamond',serif;font-size:2rem;color:rgba(200,242,90,.15);line-height:1;min-width:32px;flex-shrink:0}
-.mec-t{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
-.mec-p{font-size:.86rem;line-height:1.7;color:rgba(245,240,232,.65)}
-.mec-img{aspect-ratio:1;border-radius:4px;overflow:hidden}
-.mec-img .ph{min-height:100%;height:100%}
+.mec-grid{display:grid;grid-template-columns:42% 58%;gap:3rem;align-items:start;margin-top:2.5rem}
+
+/* timeline track */
+.mec-steps{display:flex;flex-direction:column;position:relative;padding-left:3rem}
+.mec-track{position:absolute;left:.9rem;top:1rem;bottom:1rem;width:2px;background:rgba(14,168,148,.18);border-radius:2px}
+.mec-progress{position:absolute;top:0;left:0;width:100%;background:var(--accent);border-radius:2px;height:0%;transition:height .5s cubic-bezier(.4,0,.2,1)}
+
+/* each step */
+.mec-step{display:flex;gap:1.4rem;padding:1.2rem 1rem 1.2rem 0;cursor:pointer;position:relative;border-radius:6px;transition:background .2s;margin-bottom:.2rem}
+.mec-step:hover{background:rgba(14,168,148,.06)}
+.mec-step.active{background:rgba(14,168,148,.1)}
+
+/* dot on the track */
+.mec-dot{position:absolute;left:-2.35rem;top:1.6rem;width:14px;height:14px;border-radius:50%;border:2px solid rgba(14,168,148,.4);background:var(--teal-dim);transition:background .3s,border-color .3s,transform .3s;flex-shrink:0;z-index:1}
+.mec-step.active .mec-dot{background:var(--accent);border-color:var(--accent);transform:scale(1.3);box-shadow:0 0 0 4px rgba(200,242,90,.2)}
+
+/* dot pulse when active */
+.mec-dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(200,242,90,.4);opacity:0;transform:scale(.6);transition:opacity .3s,transform .3s}
+.mec-step.active .mec-dot::after{opacity:1;transform:scale(1);animation:dotPulse 1.8s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.5);opacity:0}}
+
+.mec-n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:rgba(200,242,90,.12);line-height:1;min-width:34px;flex-shrink:0;transition:color .3s}
+.mec-step.active .mec-n{color:rgba(200,242,90,.45)}
+.mec-t{font-size:1rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(200,242,90,.5);margin-bottom:.4rem;transition:color .3s}
+.mec-step.active .mec-t{color:var(--accent)}
+
+/* text collapses when inactive */
+.mec-p{font-size:1.2rem;line-height:1.7;color:rgba(245,240,232,.4);max-height:0;overflow:hidden;transition:max-height .45s ease,color .3s,opacity .3s;opacity:0}
+.mec-step.active .mec-p{max-height:200px;color:rgba(245,240,232,.85);opacity:1}
+
+/* IMAGE SIDE */
+.mec-img-wrap{position:relative;border-radius:8px;overflow:hidden;transition:transform .4s ease,box-shadow .4s ease}
+.mec-img-wrap.pulse{animation:imgPulse .6s cubic-bezier(.22,.68,0,1.4)}
+@keyframes imgPulse{0%{transform:scale(1)}40%{transform:scale(1.04)}100%{transform:scale(1)}}
 
 /* APLICACION */
 .app-split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .app-list{list-style:none;display:flex;flex-direction:column;gap:.8rem;margin-top:1.2rem}
-.app-list li{display:flex;align-items:flex-start;gap:.8rem;font-size:.9rem;line-height:1.6;color:var(--gray)}
+.app-list li{display:flex;align-items:flex-start;gap:.8rem;font-size:1.3rem;line-height:1.6;color:var(--gray)}
 .app-list li::before{content:'→';color:var(--teal);font-weight:600;flex-shrink:0;margin-top:.1rem}
 
 /* EFECTOS */
 .efec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
 .efec-card{background:var(--mist);border-radius:4px;padding:1.5rem;border-left:3px solid var(--teal)}
-.efec-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem}
-.efec-text{font-size:.84rem;line-height:1.65;color:var(--gray)}
+.efec-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ink);margin-bottom:.5rem}
+.efec-text{font-size:1.2rem;line-height:1.65;color:var(--gray)}
 
 /* GERMICIDA */
 .germ-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
 .germ-block{background:rgba(14,168,148,.07);border:1px solid rgba(14,168,148,.2);border-radius:4px;padding:1.6rem}
-.germ-title{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
-.germ-text{font-size:.86rem;line-height:1.7;color:rgba(245,240,232,.7)}
+.germ-title{font-size:1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.germ-text{font-size:1.3rem;line-height:1.7;color:rgba(245,240,232,.7)}
 
 /* VIAS */
 .vias-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
-.via-card{background:rgba(255,255,255,.03);border:1px solid rgba(14,168,148,.18);border-radius:4px;padding:1.6rem;transition:background .2s}
-.via-card:hover{background:rgba(14,168,148,.08)}
+.via-card{background:rgba(255,255,255,.03);border:1px solid rgba(14,168,148,.18);border-radius:4px;padding:1.6rem;transition:background .2s,transform .3s,border-color .3s;position:relative;overflow:hidden;cursor:pointer}
+.via-card:hover{background:rgba(14,168,148,.08);transform:translateY(-2px)}
+.via-card.revealed{border-color:var(--accent);transform:translateY(-4px)}
+.via-card-inner{transition:filter .45s ease,opacity .45s ease}
+.via-card:not(.revealed) .via-card-inner{filter:blur(7px);opacity:.4;user-select:none;pointer-events:none}
+.via-lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;z-index:2;transition:opacity .35s ease;background:rgba(3,46,41,.5)}
+.via-card.revealed .via-lock{opacity:0;pointer-events:none}
+.via-lock-rings{position:relative;width:56px;height:56px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.via-lock-ring{position:absolute;border-radius:50%;border:1.5px solid rgba(200,242,90,.35);animation:lockPulse 2.2s ease-in-out infinite}
+.via-lock-ring:nth-child(1){width:56px;height:56px}
+.via-lock-ring:nth-child(2){width:38px;height:38px;animation-delay:.5s;border-color:rgba(200,242,90,.5)}
+.via-lock-icon{font-size:1.4rem;position:relative;z-index:1;color:var(--cream)}
+.via-lock-text{font-size:.85rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.8);text-align:center;line-height:1.3}
+@keyframes lockPulse{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.5);opacity:0}}
 .via-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:rgba(200,242,90,.12);line-height:1;margin-bottom:.4rem}
-.via-title{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.via-title{font-size:1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 .via-items{list-style:none;display:flex;flex-direction:column;gap:.35rem}
-.via-items li{font-size:.84rem;color:rgba(245,240,232,.65);line-height:1.5;padding-left:.8rem;position:relative}
+.via-items li{font-size:1.2rem;color:rgba(245,240,232,.65);line-height:1.5;padding-left:.8rem;position:relative}
 .via-items li::before{content:'·';position:absolute;left:0;color:var(--teal-lt)}
 
 /* NEXT */
 .next-section{background:var(--teal-deep);border-top:1px solid rgba(14,168,148,.2);padding:4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.next-label{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.4);margin-bottom:.5rem}
-.next-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--cream)}
-.next-desc{font-size:.85rem;color:rgba(245,240,232,.5);margin-top:.4rem;max-width:340px}
-.next-btn{background:var(--accent);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 2.5rem;border-radius:3px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:transform .2s,box-shadow .2s}
+.next-label{font-size:1rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.4);margin-bottom:.5rem}
+.next-title{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--cream)}
+.next-desc{font-size:1.2rem;color:rgba(245,240,232,.5);margin-top:.4rem;max-width:340px}
+.next-btn{background:var(--accent);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 2.5rem;border-radius:3px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:transform .2s,box-shadow .2s}
 .next-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,242,90,.2)}
+
+/* SCROLL ANIMATIONS */
+.animate-section{opacity:0}
+.animate-section.visible{animation:.7s ease forwards}
+
+/* Objetivos - slideInLeft */
+#objetivos.animate-section.visible{animation:slideInLeft .7s ease forwards}
+
+/* Ozono - slideInRight */
+#ozono.animate-section.visible{animation:slideInRight .75s ease forwards}
+
+/* Mecanismo - slideInLeft */
+#mecanismo.animate-section.visible{animation:slideInLeft .75s ease forwards}
+
+/* Aplicación - slideInRight */
+#aplicacion.animate-section.visible{animation:slideInRight .7s ease forwards}
+
+/* Efectos - slideInLeft */
+#efectos.animate-section.visible{animation:slideInLeft .8s ease forwards}
+
+/* Germicida - slideInRight */
+#germicida.animate-section.visible{animation:slideInRight .75s ease forwards}
+
+/* Vías - slideInLeft */
+#vias.animate-section.visible{animation:slideInLeft .7s ease forwards}
+
+/* Next section - slideUp */
+.next-section.animate-section.visible{animation:slideUp .75s ease forwards}
+
+@keyframes slideUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-80px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(80px)}to{opacity:1;transform:translateX(0)}}
 
 /* MOBILE */
 @media(max-width:860px){
@@ -199,28 +290,16 @@ section{padding:5rem 4rem}
   <div class="hero-grid-lines"></div>
   <div class="hero-content">
     <span class="hero-tag">Medicina Veterinaria · Formación</span>
-    <h1 class="hero-title">Ozonoterapia<br>aplicada a la<br><em>clínica veterinaria</em></h1>
+    <h1 class="hero-title"><span class="hero-initial">Ozono</span>terapia<br>aplicada a la<br><em>clínica veterinaria</em></h1>
     <p class="hero-sub">Conocimiento teórico-práctico sobre el uso terapéutico del ozono en diversas especies: animales pequeños, grandes y exóticos. Vías de administración, dosis, concentraciones y protocolos clínicos.</p>
     <div class="hero-cta">
       <a href="#objetivos" class="btn-primary">Comenzar</a>
-      <a href="casos.html" class="btn-ghost">Ver casos clínicos</a>
     </div>
   </div>
-  <svg class="hero-mol" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="100" cy="100" r="90" stroke="white" stroke-width="1"/>
-    <circle cx="100" cy="100" r="60" stroke="white" stroke-width="1"/>
-    <circle cx="100" cy="40" r="18" stroke="white" stroke-width="1.5"/>
-    <circle cx="160" cy="130" r="18" stroke="white" stroke-width="1.5"/>
-    <circle cx="40" cy="130" r="18" stroke="white" stroke-width="1.5"/>
-    <line x1="100" y1="58" x2="100" y2="100" stroke="white" stroke-width="1.5"/>
-    <line x1="143" y1="116" x2="100" y2="100" stroke="white" stroke-width="1.5"/>
-    <line x1="57" y1="116" x2="100" y2="100" stroke="white" stroke-width="1.5"/>
-    <circle cx="100" cy="100" r="8" fill="white" fill-opacity=".25"/>
-  </svg>
 </section>
 
 <!-- OBJETIVOS -->
-<section class="s-dark" id="objetivos">
+<section class="s-dark animate-section" id="objetivos">
   <div class="objetivos-wrap">
     <div>
       <p class="eyebrow">Objetivos</p>
@@ -231,7 +310,7 @@ section{padding:5rem 4rem}
 </section>
 
 <!-- OZONO -->
-<section class="s-mid" id="ozono">
+<section class="s-mid animate-section" id="ozono">
   <p class="eyebrow">El ozono</p>
   <h2 class="sec-title">Principales características de<br><em>la molécula de ozono</em></h2>
   <div class="ozono-intro">
@@ -254,23 +333,53 @@ section{padding:5rem 4rem}
     </div>
   </div>
   <div class="props-grid">
-    <div class="prop-card">
-      <span class="prop-icon">⚡</span>
-      <div class="prop-title">Inestabilidad</div>
-      <span class="prop-val">Vida media corta</span>
-      <p class="prop-desc">Ya que presenta una estructura química inestable, el ozono rápidamente tiende a volver a su estado original de oxígeno molecular (O2)</p>
+    <div class="prop-card" onclick="revealCard(this)">
+      <div class="prop-lock">
+        <div class="prop-lock-rings">
+          <div class="prop-lock-ring"></div>
+          <div class="prop-lock-ring"></div>
+          <span class="prop-lock-icon">🔒</span>
+        </div>
+        <div class="prop-lock-text">Click para<br>descubrir</div>
+      </div>
+      <div class="prop-card-inner">
+        <span class="prop-icon">⚡</span>
+        <div class="prop-title">Inestabilidad</div>
+        <span class="prop-val">Vida media corta</span>
+        <p class="prop-desc">Ya que presenta una estructura química inestable, el ozono rápidamente tiende a volver a su estado original de oxígeno molecular (O2)</p>
+      </div>
     </div>
-    <div class="prop-card">
-      <span class="prop-icon">🔬</span>
-      <div class="prop-title">Oxidación</div>
-      <span class="prop-val">2.07 V</span>
-      <p class="prop-desc">Posee un elevado potencial de oxidación de 2.07V comparado al cloro 1.36V y al oxígeno 1.23V perdiendo apenas para el flúor. Por lo tanto es capaz de oxidar muchos compuestos orgánicos e inorgánicos, actuando como un poderoso germicida.</p>
+    <div class="prop-card" onclick="revealCard(this)">
+      <div class="prop-lock">
+        <div class="prop-lock-rings">
+          <div class="prop-lock-ring"></div>
+          <div class="prop-lock-ring"></div>
+          <span class="prop-lock-icon">🔒</span>
+        </div>
+        <div class="prop-lock-text">Click para<br>descubrir</div>
+      </div>
+      <div class="prop-card-inner">
+        <span class="prop-icon">🔬</span>
+        <div class="prop-title">Oxidación</div>
+        <span class="prop-val">2.07 V</span>
+        <p class="prop-desc">Posee un elevado potencial de oxidación de 2.07V comparado al cloro 1.36V y al oxígeno 1.23V perdiendo apenas para el flúor. Por lo tanto es capaz de oxidar muchos compuestos orgánicos e inorgánicos, actuando como un poderoso germicida.</p>
+      </div>
     </div>
-    <div class="prop-card">
-      <span class="prop-icon">🔄</span>
-      <div class="prop-title">Reactividad</div>
-      <span class="prop-val">Alta</span>
-      <p class="prop-desc">Debido a que el ozono es altamente oxidante, esto favorece a su capacidad de reacción con otras moléculas presentes en el medio, produciendo nuevos subproductos.</p>
+    <div class="prop-card" onclick="revealCard(this)">
+      <div class="prop-lock">
+        <div class="prop-lock-rings">
+          <div class="prop-lock-ring"></div>
+          <div class="prop-lock-ring"></div>
+          <span class="prop-lock-icon">🔒</span>
+        </div>
+        <div class="prop-lock-text">Click para<br>descubrir</div>
+      </div>
+      <div class="prop-card-inner">
+        <span class="prop-icon">🔄</span>
+        <div class="prop-title">Reactividad</div>
+        <span class="prop-val">Alta</span>
+        <p class="prop-desc">Debido a que el ozono es altamente oxidante, esto favorece a su capacidad de reacción con otras moléculas presentes en el medio, produciendo nuevos subproductos.</p>
+      </div>
     </div>
   </div>
   <div class="conc-box">
@@ -283,47 +392,45 @@ section{padding:5rem 4rem}
   </div>
 </section>
 
-<!-- FOTOS slides 6–7 -->
-<section class="s-dark" style="padding-top:2rem;padding-bottom:3rem">
-  <p class="eyebrow">Galería</p>
-  <div class="collage-2">
-    <div class="ph" style="min-height:400px" onclick="openLb(this)">
-      <img src="img/imagen-uno.png" alt="Foto">
-    </div>
-    <div class="ph" style="min-height:400px" onclick="openLb(this)">
-      <img src="img/imagen-dos.png" alt="Foto">
-    </div>
-  </div>
-</section>
 
 <!-- MECANISMO DE ACCION -->
-<section class="s-mid" id="mecanismo">
+<section class="s-mid animate-section" id="mecanismo">
   <p class="eyebrow">Mecanismo de acción</p>
   <h2 class="sec-title"><em>Cómo actúa</em> el ozono</h2>
   <div class="mec-grid">
-    <div class="mec-steps">
-      <div class="mec-step">
+
+    <div class="mec-steps" id="mecSteps">
+      <div class="mec-track"><div class="mec-progress" id="mecProgress"></div></div>
+
+      <div class="mec-step active" data-step="0" onclick="setMecStep(0)">
+        <div class="mec-dot"></div>
         <div class="mec-n">01</div>
         <div>
           <div class="mec-t">Contacto con el plasma</div>
           <p class="mec-p">El ozono / oxígeno ingresa a la sangre y se contacta con el plasma y las células. Se disuelve rápidamente ya que es 10 veces más soluble que el oxígeno.</p>
         </div>
       </div>
-      <div class="mec-step">
+
+      <div class="mec-step" data-step="1" onclick="setMecStep(1)">
+        <div class="mec-dot"></div>
         <div class="mec-n">02</div>
         <div>
           <div class="mec-t">Oxidación terapéutica</div>
           <p class="mec-p">El ozono aplicado en concentraciones terapéuticas produce una oxidación del medio que le indica a las células que responda aumentando sus defensas antioxidantes. El efecto de la ozonoterapia responde al principio de acción y reacción.</p>
         </div>
       </div>
-      <div class="mec-step">
+
+      <div class="mec-step" data-step="2" onclick="setMecStep(2)">
+        <div class="mec-dot"></div>
         <div class="mec-n">03</div>
         <div>
           <div class="mec-t">Respuesta celular</div>
           <p class="mec-p">Provoca una oxidación no agresiva para la célula (siempre que se aplique a dosis, concentración y vía adecuadas) indicándole a la misma que es necesario responder de un modo más enérgico contra el daño que la propia patología le está produciendo de modo tal de recuperar su homeostasis.</p>
         </div>
       </div>
-      <div class="mec-step">
+
+      <div class="mec-step" data-step="3" onclick="setMecStep(3)">
+        <div class="mec-dot"></div>
         <div class="mec-n">04</div>
         <div>
           <div class="mec-t">Generación de mensajeros</div>
@@ -331,85 +438,17 @@ section{padding:5rem 4rem}
         </div>
       </div>
     </div>
-    <div class="mec-img">
-      <div class="ph" style="min-height:400px;cursor:default;background:#ffffff;border-color:rgba(10,127,114,.2)">
-        <svg width="100%" viewBox="0 0 680 460" style="position:absolute;inset:0;width:100%;height:100%">
-          <defs>
-            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </marker>
-          </defs>
 
-          <!-- Central node -->
-          <rect x="190" y="175" width="300" height="68" rx="10" fill="#0a7f72" stroke="#064d44" stroke-width="0.5"/>
-          <text x="340" y="200" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="'Outfit',sans-serif" font-size="16" font-weight="600">Oxidación controlada</text>
-          <text x="340" y="220" text-anchor="middle" dominant-baseline="central" fill="rgba(255,255,255,.8)" font-family="'Outfit',sans-serif" font-size="12">El O2/O3 ingresa en la sangre y se contacta</text>
-          <text x="340" y="234" text-anchor="middle" dominant-baseline="central" fill="rgba(255,255,255,.8)" font-family="'Outfit',sans-serif" font-size="12">con el plasma y la sangre</text>
-          <text x="340" y="258" text-anchor="middle" dominant-baseline="central" fill="#0a7f72" font-family="'Outfit',sans-serif" font-size="13" font-weight="600">Reacciona instantáneamente</text>
-
-          <!-- Top left: Se disuelve en -->
-          <rect x="26" y="58" width="160" height="42" rx="21" fill="#0a7f72" stroke="#064d44" stroke-width="0.5"/>
-          <text x="106" y="79" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="'Outfit',sans-serif" font-size="14" font-weight="600">Se disuelve en</text>
-          <line x1="186" y1="88" x2="218" y2="175" stroke="rgba(10,127,114,.45)" stroke-width="1.2" stroke-dasharray="5 4"/>
-
-          <!-- Left callouts -->
-          <circle cx="22" cy="132" r="2.5" fill="#0a7f72"/>
-          <text x="30" y="136" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">1. Agua del plasma</text>
-          <circle cx="22" cy="154" r="2.5" fill="#0a7f72"/>
-          <text x="30" y="158" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">2. Capa de agua (insuflación)</text>
-          <circle cx="22" cy="176" r="2.5" fill="#0a7f72"/>
-          <text x="30" y="180" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">3. Fluidos extracelulares</text>
-          <circle cx="22" cy="198" r="2.5" fill="#0a7f72"/>
-          <text x="30" y="202" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">4. Humedad de mucosas</text>
-
-          <!-- Top right: Reacciona con biomoléculas -->
-          <rect x="494" y="46" width="172" height="54" rx="10" fill="#0a7f72" stroke="#064d44" stroke-width="0.5"/>
-          <text x="580" y="66" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="'Outfit',sans-serif" font-size="14" font-weight="600">Reacciona con</text>
-          <text x="580" y="84" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="'Outfit',sans-serif" font-size="14" font-weight="600">diferentes biomoléculas</text>
-          <line x1="494" y1="88" x2="462" y2="175" stroke="rgba(10,127,114,.45)" stroke-width="1.2" stroke-dasharray="5 4"/>
-
-          <!-- Right callouts biomoléculas -->
-          <circle cx="488" cy="132" r="2.5" fill="#0a7f72"/>
-          <text x="496" y="136" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">1. Hidratos de carbono</text>
-          <circle cx="488" cy="154" r="2.5" fill="#0a7f72"/>
-          <text x="496" y="158" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">2. Lípidos</text>
-          <circle cx="488" cy="176" r="2.5" fill="#0a7f72"/>
-          <text x="496" y="180" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">3. Proteínas</text>
-
-          <!-- Bottom: Genera mensajeros -->
-          <rect x="242" y="336" width="196" height="42" rx="21" fill="#0a7f72" stroke="#064d44" stroke-width="0.5"/>
-          <text x="340" y="357" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="'Outfit',sans-serif" font-size="14" font-weight="600">Genera mensajeros</text>
-          <line x1="340" y1="243" x2="340" y2="336" stroke="rgba(10,127,114,.45)" stroke-width="1.2" stroke-dasharray="5 4"/>
-
-          <!-- Bottom callouts mensajeros -->
-          <line x1="438" y1="357" x2="454" y2="357" stroke="rgba(10,127,114,.45)" stroke-width="1.2" stroke-dasharray="5 4"/>
-          <circle cx="458" cy="344" r="2.5" fill="#0a7f72"/>
-          <text x="466" y="348" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">· Eritrocitos</text>
-          <circle cx="458" cy="362" r="2.5" fill="#0a7f72"/>
-          <text x="466" y="366" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">· Leucocitos</text>
-          <circle cx="458" cy="380" r="2.5" fill="#0a7f72"/>
-          <text x="466" y="384" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">· Plaqueta</text>
-          <circle cx="458" cy="398" r="2.5" fill="#0a7f72"/>
-          <text x="466" y="402" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">· Endotelio</text>
-          <circle cx="458" cy="416" r="2.5" fill="#0a7f72"/>
-          <text x="466" y="420" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">· Médula ósea</text>
-          <circle cx="458" cy="434" r="2.5" fill="#0a7f72"/>
-          <text x="466" y="438" fill="#1a3a36" font-family="'Outfit',sans-serif" font-size="12.5">· Otros órganos</text>
-        </svg>
-      </div>
+    <div class="mec-img" id="mecImgWrap">
+      <div class="mec-img-glow" id="mecGlow"></div>
+      <img src="CHATGPTimage2.png" alt="Mecanismo de acción del ozono" style="width:90%;display:block;object-fit:contain;background:none">
     </div>
-  </div>
-</section>
 
-<!-- FOTO slide 10 -->
-<section class="s-dark" style="padding-top:2rem;padding-bottom:3rem">
-  <div class="ph" style="min-height:450px;max-width:860px;margin:0 auto" onclick="openLb(this)">
-    <img src="img/imagen-tres.png" alt="Foto">
   </div>
 </section>
 
 <!-- APLICACION DEL OZONO -->
-<section class="s-light" id="aplicacion">
+<section class="s-light animate-section" id="aplicacion">
   <div class="app-split">
     <div>
       <p class="eyebrow">Aplicación del ozono</p>
@@ -424,13 +463,13 @@ section{padding:5rem 4rem}
       </ul>
     </div>
     <div class="ph" style="min-height:600px" onclick="openLb(this)">
-      <img src="img/imagen-cuatro.png" alt="Aplicación del ozono">
+      <img src="CHATGPTimage.png" alt="Aplicación del ozono">
     </div>
   </div>
 </section>
 
 <!-- EFECTOS DEL OZONO -->
-<section class="s-mist" id="efectos">
+<section class="s-mist animate-section" id="efectos">
   <p class="eyebrow">Efectos del ozono</p>
   <h2 class="sec-title">Propiedades <em>terapéuticas</em></h2>
   <div class="efec-grid">
@@ -450,7 +489,7 @@ section{padding:5rem 4rem}
 </section>
 
 <!-- GERMICIDA -->
-<section class="s-dark" id="germicida">
+<section class="s-dark animate-section" id="germicida">
   <div class="germ-grid">
     <div class="germ-block">
       <div class="germ-title">Efecto germicida: Virus / bacterias / hongos</div>
@@ -464,35 +503,65 @@ section{padding:5rem 4rem}
 </section>
 
 <!-- VIAS DE ADMINISTRACION -->
-<section class="s-mid" id="vias">
+<section class="s-mid animate-section" id="vias">
   <p class="eyebrow">Vías de administración</p>
   <h2 class="sec-title"><em>Cómo</em> se administra</h2>
   <div class="vias-grid">
-    <div class="via-card">
-      <div class="via-num">01</div>
-      <div class="via-title">Sistémicas</div>
-      <ul class="via-items">
-        <li>Sueros EV</li><li>Subcutánea</li><li>Auto hemoterapia mayor</li><li>Auto hemoterapia menor</li><li>Intrarticular</li>
-      </ul>
+    <div class="via-card" onclick="revealCard(this)">
+      <div class="via-lock">
+        <div class="via-lock-rings">
+          <div class="via-lock-ring"></div>
+          <div class="via-lock-ring"></div>
+          <span class="via-lock-icon">🔒</span>
+        </div>
+        <div class="via-lock-text">Click para<br>desbloquear</div>
+      </div>
+      <div class="via-card-inner">
+        <div class="via-num">01</div>
+        <div class="via-title">Sistémicas</div>
+        <ul class="via-items">
+          <li>Sueros EV</li><li>Subcutánea</li><li>Auto hemoterapia mayor</li><li>Auto hemoterapia menor</li><li>Intrarticular</li>
+        </ul>
+      </div>
     </div>
-    <div class="via-card">
-      <div class="via-num">02</div>
-      <div class="via-title">Insuflaciones</div>
-      <ul class="via-items">
-        <li>Intrarectal</li><li>Ótica</li><li>Vaginal</li><li>Uretral</li>
-      </ul>
+    <div class="via-card" onclick="revealCard(this)">
+      <div class="via-lock">
+        <div class="via-lock-rings">
+          <div class="via-lock-ring"></div>
+          <div class="via-lock-ring"></div>
+          <span class="via-lock-icon">🔒</span>
+        </div>
+        <div class="via-lock-text">Click para<br>desbloquear</div>
+      </div>
+      <div class="via-card-inner">
+        <div class="via-num">02</div>
+        <div class="via-title">Insuflaciones</div>
+        <ul class="via-items">
+          <li>Intrarectal</li><li>Ótica</li><li>Vaginal</li><li>Uretral</li>
+        </ul>
+      </div>
     </div>
-    <div class="via-card">
-      <div class="via-num">03</div>
-      <div class="via-title">Tópicas</div>
-      <ul class="via-items">
-        <li>Aplicación de soluciones</li><li>Agua, aceites y cremas ozonizadas</li><li>Embolsado (bagging)</li>
-      </ul>
+    <div class="via-card" onclick="revealCard(this)">
+      <div class="via-lock">
+        <div class="via-lock-rings">
+          <div class="via-lock-ring"></div>
+          <div class="via-lock-ring"></div>
+          <span class="via-lock-icon">🔒</span>
+        </div>
+        <div class="via-lock-text">Click para<br>desbloquear</div>
+      </div>
+      <div class="via-card-inner">
+        <div class="via-num">03</div>
+        <div class="via-title">Tópicas</div>
+        <ul class="via-items">
+          <li>Aplicación de soluciones</li><li>Agua, aceites y cremas ozonizadas</li><li>Embolsado (bagging)</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="next-section">
+<div class="next-section animate-section">
   <div>
     <div class="next-label">Continuar</div>
     <div class="next-title">Patologías y tratamientos</div>
@@ -510,6 +579,75 @@ function openLb(el){
   document.getElementById('lb').classList.add('open')
 }
 function closeLb(){document.getElementById('lb').classList.remove('open')}
+
+/* ── REVEAL CARD ── */
+function revealCard(card){
+  if(card.classList.contains('revealed')) return
+  card.classList.add('revealed','revealing')
+  setTimeout(()=>card.classList.remove('revealing'), 600)
+  launchConfetti(card)
+}
+
+/* ── CONFETTI ── */
+function launchConfetti(card){
+  const rect=card.getBoundingClientRect()
+  const cx=rect.left+rect.width/2, cy=rect.top+rect.height/2
+  const colors=['#c8f25a','#0ea894','#ffffff','#f5f0e8','#0a7f72','#e0f0ed','#a8e4a0']
+  const shapes=['square','circle','rect']
+  for(let i=0;i<48;i++){
+    const el=document.createElement('div')
+    el.className='confetti-piece'
+    const angle=(Math.random()*360)*Math.PI/180
+    const dist=80+Math.random()*180
+    const tx=Math.cos(angle)*dist, ty=Math.sin(angle)*dist-60
+    const rot=(Math.random()-.5)*900
+    const dur=(.6+Math.random()*.7).toFixed(2)
+    const size=6+Math.random()*8
+    const color=colors[Math.floor(Math.random()*colors.length)]
+    const shape=shapes[Math.floor(Math.random()*shapes.length)]
+    el.style.cssText=`left:${cx+(Math.random()-.5)*30}px;top:${cy+(Math.random()-.5)*20}px;width:${shape==='rect'?size*2:size}px;height:${shape==='rect'?size/2:size}px;background:${color};border-radius:${shape==='circle'?'50%':shape==='rect'?'1px':'2px'};--tx:${tx}px;--ty:${ty}px;--rot:${rot}deg;--dur:${dur}s;`
+    document.body.appendChild(el)
+    el.addEventListener('animationend',()=>el.remove())
+  }
+}
+
+/* ── MECANISMO TIMELINE ── */
+let mecCurrent=0, mecTimer=null
+const MEC_TOTAL=4
+
+function setMecStep(idx, fromAuto){
+  if(!fromAuto){
+    clearInterval(mecTimer)
+    mecTimer=setInterval(()=>setMecStep((mecCurrent+1)%MEC_TOTAL,true),3800)
+  }
+  mecCurrent=idx
+  document.querySelectorAll('.mec-step').forEach((s,i)=>s.classList.toggle('active',i===idx))
+  document.getElementById('mecProgress').style.height=(idx/(MEC_TOTAL-1)*100)+'%'
+  const wrap=document.getElementById('mecImgWrap')
+  const glow=document.getElementById('mecGlow')
+  wrap.classList.remove('pulse')
+  void wrap.offsetWidth
+  wrap.classList.add('pulse')
+  glow.style.opacity='1'
+  setTimeout(()=>{glow.style.opacity='0'},700)
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  setMecStep(0,true)
+  mecTimer=setInterval(()=>setMecStep((mecCurrent+1)%MEC_TOTAL,true),3800)
+  
+  /* ── SCROLL ANIMATIONS ── */
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible')
+        observer.unobserve(entry.target)
+      }
+    })
+  },{threshold:.15})
+  
+  document.querySelectorAll('.animate-section').forEach(el=>observer.observe(el))
+})
 </script>
 </body>
 </html>
