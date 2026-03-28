@@ -355,6 +355,20 @@ section{padding:5rem 4rem}
   .new-hero{margin-top:100px; margin-bottom:100px;}
 }
 }
+
+/* HIGHLIGHT ANIMATION */
+.highlight-word {
+  background: linear-gradient(90deg, rgba(200,242,90,0.4) 0%, rgba(200,242,90,0.4) 100%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+}
+
+@keyframes highlight {
+  to {
+    background-size: 100% 100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -403,24 +417,18 @@ section{padding:5rem 4rem}
       <p class="eyebrow">Objetivos</p>
       <div class="obj-label">01</div>
     </div>
-    <p class="obj-text">Adquirir los conocimientos necesarios teorico-prácticos de la Ozonoterapia aplicada a la Medicina Veterinaria en distintas patologías de las diversas especies de animales (animales pequeños, animales grandes, exóticos), la adecuada utilización de sus vías de administración, dosis, concentraciones a aplicar y duración del tratamiento.</p>
+    <p class="obj-text">Adquirir los conocimientos necesarios teorico-prácticos de la <span class="highlight-word">Ozonoterapia</span> aplicada a la <span class="highlight-word">Medicina Veterinaria</span> en distintas <span class="highlight-word">patologías</span> de las diversas <span class="highlight-word">especies</span> de <span class="highlight-word">animales</span> (<span class="highlight-word">animales pequeños</span>, <span class="highlight-word">animales grandes</span>, <span class="highlight-word">exóticos</span>), la adecuada utilización de sus <span class="highlight-word">vías de administración</span>, <span class="highlight-word">dosis</span>, <span class="highlight-word">concentraciones</span> a aplicar y <span class="highlight-word">duración del tratamiento</span>.</p>
   </div>
 </section>
 
-<section class="new-hero">
+<section class="new-hero animate-section" id="new-hero">
   <div class="new-hero-container">
     <!-- Texto -->
     <div class="new-hero-text">
       <span class="new-tag">No dejes pasar la oportunidad</span>
       <h1>Una nueva forma de sanar.</h1>
-      <p>
-        La ozonoterapia es un tratamiento innovador que ayuda a reducir el dolor, acelerar la recuperación y 
-        fortalecer el sistema inmunológico de tu mascota de forma segura y efectiva.
-      </p>
-      <p>
-        Ideal para tratar lesiones, inflamaciones y diversas patologías, este enfoque terapéutico 
-        complementa los tratamientos tradicionales y mejora el bienestar general.
-      </p>
+      <p>La ozonoterapia es un tratamiento innovador que ayuda a reducir el dolor, acelerar la recuperación y fortalecer el sistema inmunológico de tu mascota de forma segura y efectiva.</p>
+      <p>Ideal para tratar lesiones, inflamaciones y diversas patologías, este enfoque terapéutico complementa los tratamientos tradicionales y mejora el bienestar general.</p>
     </div>
     <!-- Visual (GIF + fondo + sombra) -->
     <div class="new-hero-visual">
@@ -575,14 +583,14 @@ section{padding:5rem 4rem}
   <div class="app-split">
     <div>
       <p class="eyebrow">Aplicación del ozono</p>
-      <h2 class="sec-title">El <em>objetivo</em> es:</h2>
+      <h2 class="sec-title" data-text="El objetivo es:">El <em>objetivo</em> es:</h2>
       <ul class="app-list">
-        <li>Aumentar la saturación del oxígeno en el torrente sanguíneo.</li>
-        <li>Activar las enzimas celulares antioxidantes encargadas de eliminar los radicales libres.</li>
-        <li>Estimular su sistema inmune.</li>
-        <li>Eliminar microorganismos patógenos.</li>
-        <li>Promover la regeneración de tejidos.</li>
-        <li>Activar la microcirculación.</li>
+        <li data-text="Aumentar la saturación del oxígeno en el torrente sanguíneo.">Aumentar la saturación del oxígeno en el torrente sanguíneo.</li>
+        <li data-text="Activar las enzimas celulares antioxidantes encargadas de eliminar los radicales libres.">Activar las enzimas celulares antioxidantes encargadas de eliminar los radicales libres.</li>
+        <li data-text="Estimular su sistema inmune.">Estimular su sistema inmune.</li>
+        <li data-text="Eliminar microorganismos patógenos.">Eliminar microorganismos patógenos.</li>
+        <li data-text="Promover la regeneración de tejidos.">Promover la regeneración de tejidos.</li>
+        <li data-text="Activar la microcirculación.">Activar la microcirculación.</li>
       </ul>
     </div>
     <div class="ph" style="min-height:600px" onclick="openLb(this)">
@@ -597,16 +605,16 @@ section{padding:5rem 4rem}
   <h2 class="sec-title">Propiedades <em>terapéuticas</em></h2>
   <div class="efec-grid">
     <div class="efec-card">
-      <div class="efec-title">Sistema inmune</div>
-      <p class="efec-text">Aumenta la eficiencia del sistema inmune, controlando el exceso de los radicales libres, inductor de citoquinas, produciendo respuesta inmune positiva.</p>
+      <div class="efec-title"><span class="highlight-word highlight-1">Sistema inmune</span></div>
+      <p class="efec-text">Aumenta la eficiencia del <span class="highlight-word highlight-2">sistema inmune</span>, controlando el exceso de los <span class="highlight-word highlight-3">radicales libres</span>, inductor de <span class="highlight-word highlight-4">citoquinas</span>, produciendo <span class="highlight-word highlight-5">respuesta inmune positiva</span>.</p>
     </div>
     <div class="efec-card">
-      <div class="efec-title">Efecto antiálgico</div>
-      <p class="efec-text">Efecto antiálgico, disminuye el dolor por aumento de las endorfinas.</p>
+      <div class="efec-title"><span class="highlight-word highlight-6">Efecto antiálgico</span></div>
+      <p class="efec-text"><span class="highlight-word highlight-7">Efecto antiálgico</span>, disminuye el dolor por aumento de las <span class="highlight-word highlight-8">endorfinas</span>.</p>
     </div>
     <div class="efec-card" style="grid-column:span 2;border-left-color:var(--teal-lt)">
-      <div class="efec-title">Mejora la oxigenación celular por:</div>
-      <p class="efec-text">Aumento de las propiedades reológicas de la sangre por aumento de la flexibilidad y la elasticidad de los glóbulos rojos, facilitando la circulación. · Aumento de la velocidad de la glucólisis. · Activación de la cadena respiratoria mitocondrial facilitando la cesión de O2 atrapado en la oxihemoglobina dando así más ATP. · Aumento de la producción de la serotonina mejorando el estado anímico del paciente.</p>
+      <div class="efec-title">Mejora la <span class="highlight-word highlight-9">oxigenación celular</span> por:</div>
+      <p class="efec-text">Aumento de las propiedades reológicas de la sangre por aumento de la <span class="highlight-word highlight-10">flexibilidad</span> y la <span class="highlight-word highlight-11">elasticidad</span> de los glóbulos rojos, facilitando la circulación. · Aumento de la velocidad de la <span class="highlight-word highlight-12">glucólisis</span>. · Activación de la <span class="highlight-word highlight-13">cadena respiratoria mitocondrial</span> facilitando la cesión de O2 atrapado en la oxihemoglobina dando así más <span class="highlight-word highlight-14">ATP</span>. · Aumento de la producción de la <span class="highlight-word highlight-15">serotonina</span> mejorando el estado anímico del paciente.</p>
     </div>
   </div>
 </section>
@@ -615,12 +623,12 @@ section{padding:5rem 4rem}
 <section class="s-dark animate-section" id="germicida">
   <div class="germ-grid">
     <div class="germ-block">
-      <div class="germ-title">Efecto germicida: Virus / bacterias / hongos</div>
-      <p class="germ-text">Viral: A) inactivación de partículas virales por acción oxidante O3 y subproductos — acción sobre proteínas "spikes" ó envoltura lipídica.<br><br>Bacterias: O3 y subproductos afectan la pared y membrana celular, disminuye su resistencia. Subproductos del O3 son similares a aquellos que naturalmente utilizan los macrófagos y neutrófilos para destruir bacterias.</p>
+      <div class="germ-title"><span class="highlight-word highlight-16">Efecto germicida</span>: <span class="highlight-word highlight-17">Virus</span> / <span class="highlight-word highlight-18">bacterias</span> / <span class="highlight-word highlight-19">hongos</span></div>
+      <p class="germ-text"><span class="highlight-word highlight-20">Viral</span>: A) inactivación de <span class="highlight-word highlight-21">partículas virales</span> por <span class="highlight-word highlight-22">acción oxidante</span> O3 y <span class="highlight-word highlight-23">subproductos</span> — acción sobre <span class="highlight-word highlight-24">proteínas "spikes"</span> ó <span class="highlight-word highlight-25">envoltura lipídica</span>.<br><br><span class="highlight-word highlight-26">Bacterias</span>: O3 y subproductos afectan la <span class="highlight-word highlight-27">pared y membrana celular</span>, disminuye su <span class="highlight-word highlight-28">resistencia</span>. Subproductos del O3 son similares a aquellos que naturalmente utilizan los <span class="highlight-word highlight-29">macrófagos y neutrófilos</span> para destruir <span class="highlight-word highlight-30">bacterias</span>.</p>
     </div>
     <div class="germ-block">
-      <div class="germ-title">Efecto estimulante circulación</div>
-      <p class="germ-text">Los GR membrana alto porcentaje de fosfolípidos — adición a doble enlace de C-C de ácidos insaturados, la generación de peróxidos fluidifican la membrana del GR: mejora su reología.<br><br>Acción sobre la glucólisis-Hemoglobina: mejora la cesión de oxígeno a los tejidos.</p>
+      <div class="germ-title"><span class="highlight-word highlight-31">Efecto estimulante circulación</span></div>
+      <p class="germ-text">Los GR membrana alto porcentaje de <span class="highlight-word highlight-32">fosfolípidos</span> — adición a doble enlace de C-C de <span class="highlight-word highlight-33">ácidos insaturados</span>, la generación de <span class="highlight-word highlight-34">peróxidos</span> fluidifican la membrana del GR: mejora su <span class="highlight-word highlight-35">reología</span>.<br><br>Acción sobre la <span class="highlight-word highlight-36">glucólisis-Hemoglobina</span>: mejora la cesión de <span class="highlight-word highlight-37">oxígeno</span> a los tejidos.</p>
     </div>
   </div>
 </section>
@@ -711,6 +719,20 @@ function revealCard(card){
   launchConfetti(card)
 }
 
+/* ── TYPEWRITER ── */
+function typeWriter(el, speed = 20){
+  const text = el.dataset.text || el.textContent.trim()
+  el.textContent = ''
+  let i = 0
+  const interval = setInterval(()=>{
+    if(i < text.length){
+      el.textContent += text[i++]
+    } else {
+      clearInterval(interval)
+    }
+  }, speed)
+}
+
 /* ── CONFETTI ── */
 function launchConfetti(card){
   const rect=card.getBoundingClientRect()
@@ -756,6 +778,7 @@ function setMecStep(idx, fromAuto){
 }
 
 window.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('#aplicacion [data-text]').forEach(el => el.textContent='')
   setMecStep(0,true)
   mecTimer=setInterval(()=>setMecStep((mecCurrent+1)%MEC_TOTAL,true),3800)
   
@@ -764,6 +787,25 @@ window.addEventListener('DOMContentLoaded',()=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.classList.add('visible')
+        if(entry.target.id === 'efectos' || entry.target.id === 'germicida' || entry.target.id === 'objetivos'){
+          entry.target.classList.add('highlight-active')
+          const words = entry.target.querySelectorAll('.highlight-word')
+          words.forEach((word, index) => {
+            setTimeout(() => {
+              word.style.animation = 'highlight 0.8s ease forwards'
+            }, index * 100)
+          })
+        }
+
+        if(entry.target.id === 'aplicacion'){
+          const title = entry.target.querySelector('.sec-title')
+          if(title) typeWriter(title, 20)
+          const items = entry.target.querySelectorAll('.app-list li')
+          items.forEach((item, idx) => {
+            setTimeout(()=>typeWriter(item, 20), 300 + idx * 120)
+          })
+        }
+
         observer.unobserve(entry.target)
       }
     })
